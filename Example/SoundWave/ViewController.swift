@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	fileprivate var chronometer: Chronometer?
+	private var chronometer: Chronometer?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -58,8 +58,6 @@ class ViewController: UIViewController {
 		self.viewModel.askAudioRecordingPermission { granted in
 			print("user answered permission with \(granted ? "positive" : "negative") response")
 		}
-		
-		// TODO: Set value instead of 0.05 defined here
 		
 		self.viewModel.audioMeteringLevelUpdate = { [weak self] meteringLevel in
 			guard let this = self, this.audioVisualizationView.audioVisualizationMode == .write else {

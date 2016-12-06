@@ -9,6 +9,8 @@
 import Foundation
 import AVFoundation
 
+let audioPercentageUserInfoKey = "percentage"
+
 final class AudioRecorderManager: NSObject {
 	let audioFileNamePrefix = "org.cocoapods.demo.SoundWave-Example-Audio-"
 	let encoderBitRate: Int = 320000
@@ -26,9 +28,10 @@ final class AudioRecorderManager: NSObject {
 	}
 
 	var currentRecordPath: URL?
+	var audioVisualizationTimeInterval: TimeInterval = 0.05
 
-	fileprivate var recorder: AVAudioRecorder?
-	fileprivate var audioMeteringLevelTimer: Timer?
+	private var recorder: AVAudioRecorder?
+	private var audioMeteringLevelTimer: Timer?
 
 	func askPermission(completion: @escaping (Bool) -> Void) {
 		AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
@@ -91,7 +94,7 @@ final class AudioRecorderManager: NSObject {
 			throw AudioErrorType.recordFailed
 		}
 		
-		self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self,
+		self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: self.audioVisualizationTimeInterval, target: self,
 			selector: #selector(AudioRecorderManager.timerDidUpdateMeter), userInfo: nil, repeats: true)
 		
 		print("Audio Recorder did start - creating file at index: \(path.absoluteString)")
@@ -131,7 +134,7 @@ final class AudioRecorderManager: NSObject {
 			self.recorder!.updateMeters()
 			let averagePower = recorder!.averagePower(forChannel: 0)
 			let percentage: Float = pow(10, (0.05 * averagePower))
-			NotificationCenter.default.post(name: .audioRecorderManagerMeteringLevelDidUpdateNotification, object: self, userInfo: ["percentage": percentage])
+			NotificationCenter.default.post(name: .audioRecorderManagerMeteringLevelDidUpdateNotification, object: self, userInfo: [audioPercentageUserInfoKey: percentage])
 		}
 	}
 }
@@ -152,17 +155,4 @@ extension Notification.Name {
 	static let audioRecorderManagerMeteringLevelDidUpdateNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidUpdateNotification")
 	static let audioRecorderManagerMeteringLevelDidFinishNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidFinishNotification")
 	static let audioRecorderManagerMeteringLevelDidFailNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidFailNotification")
-}
-
-extension URL {
-	static func documentsPath(forFileName fileName: String) -> URL? {
-		let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-		let writePath = URL(string: documents)!.appendingPathComponent(fileName)
-		
-		var directory: ObjCBool = ObjCBool(false)
-		if FileManager.default.fileExists(atPath: documents, isDirectory:&directory) {
-			return directory.boolValue ? writePath : nil
-		}
-		return nil
-	}
 }

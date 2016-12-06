@@ -14,8 +14,10 @@ struct SoundRecord {
 }
 
 final class ViewModel {
+	static var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
+
 	var currentAudioRecord: SoundRecord?
-	fileprivate var isPlaying = false
+	private var isPlaying = false
 	
 	var audioMeteringLevelUpdate: ((Float) -> ())?
 	var audioDidFinish: (() -> ())?
@@ -89,7 +91,7 @@ final class ViewModel {
 	// MARK: - Notifications Handling
 	
 	@objc private func didReceiveMeteringLevelUpdate(_ notification: Notification) {
-		let percentage = notification.userInfo!["percentage"] as! Float // TODO: use key
+		let percentage = notification.userInfo![audioPercentageUserInfoKey] as! Float
 		self.audioMeteringLevelUpdate?(percentage)
 	}
 	

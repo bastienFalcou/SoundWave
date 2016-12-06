@@ -19,9 +19,11 @@ final class AudioPlayerManager: NSObject {
 		}
 		return true
 	}
+	
+	var audioVisualizationTimeInterval: TimeInterval = 0.05
 
-	fileprivate var audioPlayer: AVAudioPlayer?
-	fileprivate var audioMeteringLevelTimer: Timer?
+	private var audioPlayer: AVAudioPlayer?
+	private var audioMeteringLevelTimer: Timer?
 
 	// MARK: - Reinit and play from the beginning
 
@@ -62,8 +64,8 @@ final class AudioPlayerManager: NSObject {
 			player.isMeteringEnabled = true
 			player.delegate = self
 			
-			self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(AudioPlayerManager.timerDidUpdateMeter),
-				userInfo: nil, repeats: true)
+			self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: self.audioVisualizationTimeInterval, target: self,
+				selector: #selector(AudioPlayerManager.timerDidUpdateMeter), userInfo: nil, repeats: true)
 		}
 	}
 
@@ -101,12 +103,12 @@ final class AudioPlayerManager: NSObject {
 	
 	// MARK: - Private
 
-	@objc internal func timerDidUpdateMeter() {
+	@objc private func timerDidUpdateMeter() {
 		if self.isRunning {
 			self.audioPlayer!.updateMeters()
 			let averagePower = self.audioPlayer!.averagePower(forChannel: 0)
 			let percentage: Float = pow(10, (0.05 * averagePower))
-			NotificationCenter.default.post(name: .audioPlayerManagerMeteringLevelDidUpdateNotification, object: self, userInfo: ["percentage": percentage])
+			NotificationCenter.default.post(name: .audioPlayerManagerMeteringLevelDidUpdateNotification, object: self, userInfo: [audioPercentageUserInfoKey: percentage])
 		}
 	}
 }
@@ -120,14 +122,4 @@ extension AudioPlayerManager: AVAudioPlayerDelegate {
 extension Notification.Name {
 	static let audioPlayerManagerMeteringLevelDidUpdateNotification = Notification.Name("AudioPlayerManagerMeteringLevelDidUpdateNotification")
 	static let audioPlayerManagerMeteringLevelDidFinishNotification = Notification.Name("AudioPlayerManagerMeteringLevelDidFinishNotification")
-}
-
-extension URL {
-	static func checkPath(_ path: String) -> Bool {
-		var directory: ObjCBool = ObjCBool(false)
-		if FileManager.default.fileExists(atPath: path, isDirectory:&directory) {
-			return !directory.boolValue
-		}
-		return false
-	}
 }
