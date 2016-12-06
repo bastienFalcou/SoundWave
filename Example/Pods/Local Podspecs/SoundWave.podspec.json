@@ -1,0 +1,22 @@
+{
+  "name": "SoundWave",
+  "version": "0.1.0",
+  "summary": "A short description of SoundWave.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SoundWave",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Bastien Falcou": "bastien.falcou@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SoundWave.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SoundWave/Classes/**/*"
+}

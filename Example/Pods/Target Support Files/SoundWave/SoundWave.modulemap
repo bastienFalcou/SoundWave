@@ -1,0 +1,6 @@
+framework module SoundWave {
+  umbrella header "SoundWave-umbrella.h"
+
+  export *
+  module * { export * }
+}
