@@ -13,20 +13,20 @@ public class AudioVisualizationView: BaseNibView {
 		case write
 	}
 
-	var meteringLevelBarWidth: CGFloat = 3.0
-	var meteringLevelBarInterItem: CGFloat = 2.0
-	var meteringLevelBarCornerRadius: CGFloat = 2.0
+	public var meteringLevelBarWidth: CGFloat = 3.0
+	public var meteringLevelBarInterItem: CGFloat = 2.0
+	public var meteringLevelBarCornerRadius: CGFloat = 2.0
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
 	
-	var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
+	public var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
 
 	// Specify a `gradientPercentage` to have the width of gradient be that percentage of the view width (starting from left)
 	// The rest of the screen will be filled by `self.gradientStartColor` to display nicely.
 	// Do not specify any `gradientPercentage` for gradient calculating fitting size automatically.
-	var currentGradientPercentage: Float?
+	public var currentGradientPercentage: Float?
 
-	var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
+	public var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
 	private var meteringLevelsClusteredArray: [Float] = [] // Generated read mode array (values are percentage: 0.0 to 1.0)
 
 	private var currentMeteringLevelsArray: [Float] {
@@ -38,7 +38,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	private var playChronometer: Chronometer?
 
-	var meteringLevels: [Float]? {
+	public var meteringLevels: [Float]? {
 		didSet {
 			if let meteringLevels = self.meteringLevels {
 				self.meteringLevelsClusteredArray = meteringLevels
@@ -76,7 +76,7 @@ public class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-	func reset() {
+	public func reset() {
 		self.meteringLevels = nil
 		self.currentGradientPercentage = nil
 		self.meteringLevelsClusteredArray.removeAll()
@@ -86,7 +86,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	// MARK: - Record Mode Handling
 
-	func addMeteringLevel(_ meteringLevel: Float) {
+	public func addMeteringLevel(_ meteringLevel: Float) {
 		guard self.audioVisualizationMode == .write else {
 			fatalError("trying to populate audio visualization view in read mode")
 		}
@@ -95,7 +95,7 @@ public class AudioVisualizationView: BaseNibView {
 		self.setNeedsDisplay()
 	}
 
-	func scaleSoundDataToFitScreen() -> [Float] {
+	public func scaleSoundDataToFitScreen() -> [Float] {
 		if self.meteringLevelsArray.isEmpty {
 			return []
 		}
@@ -133,7 +133,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	// PRAGMA: - Play Mode Handling
 
-	func play(forDuration duration: TimeInterval) {
+	public func play(forDuration duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
 		}
@@ -165,14 +165,14 @@ public class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-	func pause() {
+	public func pause() {
 		guard let chronometer = self.playChronometer, chronometer.isPlaying else {
 			fatalError("trying to pause audio visualization view when not playing")
 		}
 		self.playChronometer?.pause()
 	}
 
-	func stop() {
+	public func stop() {
 		self.playChronometer?.stop()
 		self.playChronometer = nil
 

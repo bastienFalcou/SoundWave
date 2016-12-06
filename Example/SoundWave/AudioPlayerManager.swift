@@ -20,9 +20,6 @@ final class AudioPlayerManager: NSObject {
 		return true
 	}
 
-	var audioMeteringLevelUpdate: ((Float) -> ())?
-	var audioPlayerDidFinish: (() -> ())?
-
 	fileprivate var audioPlayer: AVAudioPlayer?
 	fileprivate var audioMeteringLevelTimer: Timer?
 
@@ -109,15 +106,20 @@ final class AudioPlayerManager: NSObject {
 			self.audioPlayer!.updateMeters()
 			let averagePower = self.audioPlayer!.averagePower(forChannel: 0)
 			let percentage: Float = pow(10, (0.05 * averagePower))
-			self.audioMeteringLevelUpdate?(percentage)
+			NotificationCenter.default.post(name: .audioPlayerManagerMeteringLevelDidUpdateNotification, object: self, userInfo: ["percentage": percentage])
 		}
 	}
 }
 
 extension AudioPlayerManager: AVAudioPlayerDelegate {
 	func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-		self.audioPlayerDidFinish?()
+		NotificationCenter.default.post(name: .audioPlayerManagerMeteringLevelDidFinishNotification, object: self)
 	}
+}
+
+extension Notification.Name {
+	static let audioPlayerManagerMeteringLevelDidUpdateNotification = Notification.Name("AudioPlayerManagerMeteringLevelDidUpdateNotification")
+	static let audioPlayerManagerMeteringLevelDidFinishNotification = Notification.Name("AudioPlayerManagerMeteringLevelDidFinishNotification")
 }
 
 extension URL {

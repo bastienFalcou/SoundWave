@@ -11,11 +11,11 @@ public final class Chronometer: NSObject {
 	private var timer: Timer?
 	private var timeInterval: TimeInterval = 1.0
 
-	var isPlaying = false
-	var timerCurrentValue: TimeInterval = 0.0
+	public var isPlaying = false
+	public var timerCurrentValue: TimeInterval = 0.0
 
-	var timerDidUpdate: ((TimeInterval) -> ())?
-	var timerDidComplete: (() -> ())?
+	public var timerDidUpdate: ((TimeInterval) -> ())?
+	public var timerDidComplete: (() -> ())?
 
 	public init(withTimeInterval timeInterval: TimeInterval = 0.0) {
 		super.init()
@@ -30,13 +30,13 @@ public final class Chronometer: NSObject {
 		self.isPlaying = true
 	}
 
-	func pause() {
+	public func pause() {
 		self.timer?.invalidate()
 		self.timer = nil
 		self.isPlaying = false
 	}
 
-	func stop() {
+	public func stop() {
 		self.isPlaying = false
 		self.timer?.invalidate()
 		self.timer = nil

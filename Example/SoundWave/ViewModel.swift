@@ -17,6 +17,23 @@ final class ViewModel {
 	var currentAudioRecord: SoundRecord?
 	fileprivate var isPlaying = false
 	
+	var audioMeteringLevelUpdate: ((Float) -> ())?
+	var audioDidFinish: (() -> ())?
+
+	init() {
+		// notifications update metering levels
+		NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.didReceiveMeteringLevelUpdate),
+			name: .audioPlayerManagerMeteringLevelDidUpdateNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.didReceiveMeteringLevelUpdate),
+			name: .audioRecorderManagerMeteringLevelDidUpdateNotification, object: nil)
+		
+		// notifications audio finished
+		NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.didFinishRecordOrPlayAudio),
+			name: .audioPlayerManagerMeteringLevelDidFinishNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(ViewModel.didFinishRecordOrPlayAudio),
+			name: .audioRecorderManagerMeteringLevelDidFinishNotification, object: nil)
+	}
+	
 	// MARK: - Recording
 	
 	func askAudioRecordingPermission(completion: @escaping (Bool) -> Void) {
@@ -67,5 +84,16 @@ final class ViewModel {
 	
 	func pausePlaying() throws {
 		try AudioPlayerManager.shared.pause()
+	}
+	
+	// MARK: - Notifications Handling
+	
+	@objc private func didReceiveMeteringLevelUpdate(_ notification: Notification) {
+		let percentage = notification.userInfo!["percentage"] as! Float // TODO: use key
+		self.audioMeteringLevelUpdate?(percentage)
+	}
+	
+	@objc private func didFinishRecordOrPlayAudio(_ notification: Notification) {
+		self.audioDidFinish?()
 	}
 }

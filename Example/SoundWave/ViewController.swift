@@ -36,34 +36,16 @@ class ViewController: UIViewController {
 				return .read
 			}
 		}
-		
-		var showsProgress: Bool {
-			switch self {
-			case .ready, .recording:
-				return true
-			default:
-				return false
-			}
-		}
-		
-		var showGlow: Bool {
-			switch self {
-			case .recorded, .playing, .paused:
-				return true
-			default:
-				return false
-			}
-		}
 	}
 	
 	@IBOutlet var audioVisualizationView: AudioVisualizationView!
 	@IBOutlet var recordButton: UIButton!
+	
+	let viewModel = ViewModel()
 
 	var currentState: AudioRecodingState = .ready {
 		didSet {
 			self.recordButton.setImage(self.currentState.buttonImage, for: UIControlState())
-			//self.centerButton.showCircleProgressBar = self.currentState.showsProgress
-			//self.centerButton.applyGlow(self.currentState.showGlow, color: UIColor.mainPurpleColor)
 			self.audioVisualizationView.audioVisualizationMode = self.currentState.audioVisualizationMode
 		}
 	}
@@ -73,44 +55,78 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		self.viewModel.askAudioRecordingPermission { granted in
+			print("user answered permission with \(granted ? "positive" : "negative") response")
+		}
+		
 		// TODO: Set value instead of 0.05 defined here
-		/*
-		self.viewModel.audioMeteringLevelSignal.observeValues { [weak self] soundIntensity in
-			guard let this = self, self?.audioVisualizationView.audioVisualizationMode == .write else
-			{
+		
+		self.viewModel.audioMeteringLevelUpdate = { [weak self] meteringLevel in
+			guard let this = self, this.audioVisualizationView.audioVisualizationMode == .write else {
 				return
 			}
-			this.audioVisualizationView.addMeteringLevel(soundIntensity)
+			this.audioVisualizationView.addMeteringLevel(meteringLevel)
 		}
 		
-		self.viewModel.playingAudioDidFinishSignal.observeValues { [weak self] _ in
+		self.viewModel.audioDidFinish = { [weak self] _ in
 			self?.currentState = .recorded
 			self?.audioVisualizationView.stop()
-		}*/
-	}
-	
-	/*
-	override func viewWillDisappear(_ animated: Bool) {
-		super.viewWillDisappear(animated)
-		
-		if self.currentState == .playing {
-			self.currentState = .recorded
-			AudioPlayerManager.sharedManager.stop().start()
 		}
-		self.audioVisualizationView.stop()
-		_ = self.viewModel.resetRecording()
 	}
-	*/
 	
 	// MARK: - Actions
 	
 	@IBAction func recordButtonDidTouchDown(_ sender: AnyObject) {
-		self.currentState = .recording
-		
-		self.chronometer = Chronometer()
-		self.chronometer?.start()
+		if self.currentState == .ready {
+			self.viewModel.startRecording { [weak self] soundRecord, error in
+				if let error = error {
+					print("an error occurred when trying to record sound: \(error.localizedDescription)")
+					return
+				}
+				
+				self?.currentState = .recording
+				
+				self?.chronometer = Chronometer()
+				self?.chronometer?.start()
+			}
+		}
 	}
 	
 	@IBAction func recordButtonDidTouchUpInside(_ sender: AnyObject) {
+		switch self.currentState {
+		case .recording:
+			self.chronometer?.stop()
+			self.chronometer = nil
+			
+			self.viewModel.currentAudioRecord!.meteringLevels = self.audioVisualizationView.scaleSoundDataToFitScreen()
+			self.audioVisualizationView.audioVisualizationMode = .read
+		
+			do {
+				try self.viewModel.stopRecording()
+				self.currentState = .recorded
+			} catch {
+				self.currentState = .ready
+				print("couldn't stop recording for reason \(error.localizedDescription)")
+			}
+		case .recorded, .paused:
+			do {
+				let duration = try self.viewModel.startPlaying()
+				self.currentState = .playing
+				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
+				self.audioVisualizationView.play(forDuration: duration)
+			} catch {
+				print("couldn't start playing for reason \(error.localizedDescription)")
+			}
+		case .playing:
+			do {
+				try self.viewModel.pausePlaying()
+				self.currentState = .paused
+				self.audioVisualizationView.pause()
+			} catch {
+				print("couldn't pause playing for reason \(error.localizedDescription)")
+			}
+		default:
+			break
+		}
 	}
 }

@@ -25,7 +25,6 @@ final class AudioRecorderManager: NSObject {
 		return true
 	}
 
-	var audioMeteringLevelUpdate: ((Float) -> ())?
 	var currentRecordPath: URL?
 
 	fileprivate var recorder: AVAudioRecorder?
@@ -132,19 +131,27 @@ final class AudioRecorderManager: NSObject {
 			self.recorder!.updateMeters()
 			let averagePower = recorder!.averagePower(forChannel: 0)
 			let percentage: Float = pow(10, (0.05 * averagePower))
-			self.audioMeteringLevelUpdate?(percentage)
+			NotificationCenter.default.post(name: .audioRecorderManagerMeteringLevelDidUpdateNotification, object: self, userInfo: ["percentage": percentage])
 		}
 	}
 }
 
 extension AudioRecorderManager: AVAudioRecorderDelegate {
 	func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+		NotificationCenter.default.post(name: .audioRecorderManagerMeteringLevelDidFinishNotification, object: self)
 		print("Audio Recorder finished successfully")
 	}
 
 	func audioRecorderEncodeErrorDidOccur(_ recorder: AVAudioRecorder, error: Error?) {
+		NotificationCenter.default.post(name: .audioRecorderManagerMeteringLevelDidFailNotification, object: self)
 		print("Audio Recorder error")
 	}
+}
+
+extension Notification.Name {
+	static let audioRecorderManagerMeteringLevelDidUpdateNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidUpdateNotification")
+	static let audioRecorderManagerMeteringLevelDidFinishNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidFinishNotification")
+	static let audioRecorderManagerMeteringLevelDidFailNotification = Notification.Name("AudioRecorderManagerMeteringLevelDidFailNotification")
 }
 
 extension URL {
