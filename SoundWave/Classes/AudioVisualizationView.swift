@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AudioVisualizationView: BaseNibView {
-	enum AudioVisualizationMode {
+public class AudioVisualizationView: BaseNibView {
+	public enum AudioVisualizationMode {
 		case read
 		case write
 	}
@@ -17,7 +17,7 @@ class AudioVisualizationView: BaseNibView {
 	var meteringLevelBarInterItem: CGFloat = 2.0
 	var meteringLevelBarCornerRadius: CGFloat = 2.0
 
-	var audioVisualizationMode: AudioVisualizationMode = .read
+	public var audioVisualizationMode: AudioVisualizationMode = .read
 	
 	var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
 
@@ -27,16 +27,16 @@ class AudioVisualizationView: BaseNibView {
 	var currentGradientPercentage: Float?
 
 	var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
-	fileprivate(set) var meteringLevelsClusteredArray: [Float] = [] // Generated read mode array (values are percentage: 0.0 to 1.0)
+	private var meteringLevelsClusteredArray: [Float] = [] // Generated read mode array (values are percentage: 0.0 to 1.0)
 
-	fileprivate var currentMeteringLevelsArray: [Float] {
+	private var currentMeteringLevelsArray: [Float] {
 		if !self.meteringLevelsClusteredArray.isEmpty {
 			return meteringLevelsClusteredArray
 		}
 		return meteringLevelsArray
 	}
 
-	fileprivate var playChronometer: Chronometer?
+	private var playChronometer: Chronometer?
 
 	var meteringLevels: [Float]? {
 		didSet {
@@ -68,7 +68,7 @@ class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-	override func draw(_ rect: CGRect) {
+	override public func draw(_ rect: CGRect) {
 		super.draw(rect)
 
 		if let context = UIGraphicsGetCurrentContext() {
@@ -183,7 +183,7 @@ class AudioVisualizationView: BaseNibView {
 
 	// MARK: - Mask + Gradient
 
-	fileprivate func drawLevelBarsMaskAndGradient(inContext context: CGContext) {
+	private func drawLevelBarsMaskAndGradient(inContext context: CGContext) {
 		if self.currentMeteringLevelsArray.isEmpty {
 			return
 		}
@@ -207,7 +207,7 @@ class AudioVisualizationView: BaseNibView {
 		context.restoreGState()
 	}
 
-	fileprivate func drawGradient(inContext context: CGContext) {
+	private func drawGradient(inContext context: CGContext) {
 		if self.currentMeteringLevelsArray.isEmpty {
 			return
 		}
@@ -236,7 +236,7 @@ class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-	fileprivate func drawPlainBackground(inContext context: CGContext, fillFromXCoordinate xCoordinate: CGFloat) {
+	private func drawPlainBackground(inContext context: CGContext, fillFromXCoordinate xCoordinate: CGFloat) {
 		context.saveGState()
 
 		let squarePath = UIBezierPath()
@@ -257,7 +257,7 @@ class AudioVisualizationView: BaseNibView {
 
 	// MARK: - Bars
 
-	fileprivate func drawMeteringLevelBars(inContext context: CGContext) {
+	private func drawMeteringLevelBars(inContext context: CGContext) {
 		let offset = max(self.currentMeteringLevelsArray.count - self.maximumNumberBars, 0)
 
 		for index in offset..<self.currentMeteringLevelsArray.count {
@@ -266,7 +266,7 @@ class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-	fileprivate func drawBar(_ barIndex: Int, meteringLevelIndex: Int, isUpperBar: Bool, context: CGContext) {
+	private func drawBar(_ barIndex: Int, meteringLevelIndex: Int, isUpperBar: Bool, context: CGContext) {
 		context.saveGState()
 
 		var barPath: UIBezierPath!
@@ -290,27 +290,27 @@ class AudioVisualizationView: BaseNibView {
 
 	// MARK: - Points Helpers
 
-	fileprivate var centerY: CGFloat {
+	private var centerY: CGFloat {
 		return self.frame.size.height / 2.0
 	}
 
-	fileprivate var maximumBarHeight: CGFloat {
+	private var maximumBarHeight: CGFloat {
 		return self.frame.size.height / 2.0
 	}
 
-	fileprivate var maximumNumberBars: Int {
+	private var maximumNumberBars: Int {
 		return Int(self.frame.size.width / (self.meteringLevelBarWidth + self.meteringLevelBarInterItem))
 	}
 
-	fileprivate func xLeftMostBar() -> CGFloat {
+	private func xLeftMostBar() -> CGFloat {
 		return self.xPointForMeteringLevel(min(self.maximumNumberBars - 1, self.currentMeteringLevelsArray.count - 1))
 	}
 
-	fileprivate func heightForMeteringLevel(_ meteringLevel: Float) -> CGFloat {
+	private func heightForMeteringLevel(_ meteringLevel: Float) -> CGFloat {
 		return CGFloat(meteringLevel) * self.maximumBarHeight
 	}
 
-	fileprivate func xPointForMeteringLevel(_ atIndex: Int) -> CGFloat {
+	private func xPointForMeteringLevel(_ atIndex: Int) -> CGFloat {
 		return CGFloat(atIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)
 	}
 }
