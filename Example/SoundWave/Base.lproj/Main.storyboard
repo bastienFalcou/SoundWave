@@ -1,25 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="SoundWave_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SoundWave" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hnn-af-JRi">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-Qg-Xrr" customClass="AudioVisualizationView" customModule="SoundWave">
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7if-gx-5EB">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="1K1-dg-1Dn"/>
+                                    <constraint firstAttribute="height" constant="100" id="XUf-r0-03z"/>
+                                </constraints>
+                                <state key="normal" image="Record-Button">
+                                    <color key="titleColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordButtonDidTouchDown:" destination="vXZ-lx-hvc" eventType="touchDown" id="H4Y-xQ-1Rv"/>
+                                    <action selector="recordButtonDidTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eoy-ub-E91"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.23921568627450979" green="0.10980392156862745" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="7if-gx-5EB" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="-0.5" id="4bj-ii-34h"/>
+                            <constraint firstItem="Hnn-af-JRi" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Ay4-Cm-YVi"/>
+                            <constraint firstAttribute="trailing" secondItem="a0i-Qg-Xrr" secondAttribute="trailing" id="QCu-rz-ywH"/>
+                            <constraint firstItem="a0i-Qg-Xrr" firstAttribute="top" secondItem="Hnn-af-JRi" secondAttribute="bottom" constant="10" id="Uux-XJ-hMF"/>
+                            <constraint firstItem="7if-gx-5EB" firstAttribute="top" secondItem="a0i-Qg-Xrr" secondAttribute="bottom" constant="6" id="bjL-FX-zX6"/>
+                            <constraint firstItem="Hnn-af-JRi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="7" id="lMk-JQ-wKH"/>
+                            <constraint firstItem="a0i-Qg-Xrr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xmj-70-tzh"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7if-gx-5EB" secondAttribute="bottom" constant="8" id="z9t-hx-Ndr"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="audioVisualizationView" destination="a0i-Qg-Xrr" id="7yu-b8-9qj"/>
+                        <outlet property="recordButton" destination="7if-gx-5EB" id="6t3-iQ-wbs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="141.59999999999999" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Record-Button" width="72" height="72"/>
+    </resources>
 </document>

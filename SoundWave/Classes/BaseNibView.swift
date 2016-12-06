@@ -17,7 +17,7 @@ import UIKit
 *  - Then you can insert it either in code or in a xib/storyboard, your choice
 */
 
-class BaseNibView: UIView {
+public class BaseNibView: UIView {
 	@IBOutlet var contentView: UIView!
 
 /**
@@ -50,25 +50,25 @@ class BaseNibView: UIView {
 		return UINib(nibName: self.nibName, bundle: self.nibBundle)
 	}
 	
-	fileprivate var shouldAwakeFromNib: Bool = true
+	private var shouldAwakeFromNib: Bool = true
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
 		self.createFromNib()
 	}
 	
-	required init?(coder aDecoder: NSCoder) {
+	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}
 	
-	override func awakeFromNib() {
+	override public func awakeFromNib() {
 		super.awakeFromNib()
 		
 		self.shouldAwakeFromNib = false
 		self.createFromNib()
 	}
 	
-	fileprivate func createFromNib() {
+	private func createFromNib() {
 		guard let contentView = self.contentView else {
 			return
 		}

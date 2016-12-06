@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C36F96F1DF701E0001A0F23 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F96E1DF701E0001A0F23 /* ViewModel.swift */; };
+		0C36F9721DF702B1001A0F23 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F9701DF702B1001A0F23 /* AudioPlayerManager.swift */; };
+		0C36F9731DF702B1001A0F23 /* AudioRecorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F9711DF702B1001A0F23 /* AudioRecorderManager.swift */; };
+		0C36F9751DF7045D001A0F23 /* AudioErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F9741DF7045D001A0F23 /* AudioErrorType.swift */; };
+		0CF7A0441DF7387300A46D4C /* URL+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7A0431DF7387300A46D4C /* URL+Helpers.swift */; };
 		40144728817BA31B396A9E61 /* Pods_SoundWave_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5A476D8539422A7DD5391 /* Pods_SoundWave_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		09CB1A6FB30C48865054FC20 /* Pods-SoundWave_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundWave_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0C36F96E1DF701E0001A0F23 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0C36F9701DF702B1001A0F23 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
+		0C36F9711DF702B1001A0F23 /* AudioRecorderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderManager.swift; sourceTree = "<group>"; };
+		0C36F9741DF7045D001A0F23 /* AudioErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioErrorType.swift; sourceTree = "<group>"; };
+		0CF7A0431DF7387300A46D4C /* URL+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Helpers.swift"; sourceTree = "<group>"; };
 		3AFD797C4A2888A01D51DD7D /* Pods-SoundWave_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundWave_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4A7954A0D9F1F67919EBA6E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SoundWave_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWave_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,6 +79,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C36F9761DF70465001A0F23 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0C36F9701DF702B1001A0F23 /* AudioPlayerManager.swift */,
+				0C36F9711DF702B1001A0F23 /* AudioRecorderManager.swift */,
+				0C36F9741DF7045D001A0F23 /* AudioErrorType.swift */,
+				0CF7A0431DF7387300A46D4C /* URL+Helpers.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		3DADA499607A563656BCD498 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
-				607FACD21AFB9204008FA782 /* Example for SoundWave */,
+				607FACD21AFB9204008FA782 /* SoundWave Example */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				D55D0C21129436D954D008A0 /* Pods */,
@@ -99,17 +120,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		607FACD21AFB9204008FA782 /* Example for SoundWave */ = {
+		607FACD21AFB9204008FA782 /* SoundWave Example */ = {
 			isa = PBXGroup;
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				0C36F96E1DF701E0001A0F23 /* ViewModel.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				0C36F9761DF70465001A0F23 /* Helpers */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
-			name = "Example for SoundWave";
+			name = "SoundWave Example";
 			path = SoundWave;
 			sourceTree = "<group>";
 		};
@@ -117,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -361,7 +384,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C36F9731DF702B1001A0F23 /* AudioRecorderManager.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				0C36F9721DF702B1001A0F23 /* AudioPlayerManager.swift in Sources */,
+				0CF7A0441DF7387300A46D4C /* URL+Helpers.swift in Sources */,
+				0C36F9751DF7045D001A0F23 /* AudioErrorType.swift in Sources */,
+				0C36F96F1DF701E0001A0F23 /* ViewModel.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

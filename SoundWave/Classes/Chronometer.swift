@@ -7,40 +7,36 @@
 
 import Foundation
 
-final class Chronometer: NSObject {
-	fileprivate var timer: Timer?
-	fileprivate var timeInterval: TimeInterval = 1.0
+public final class Chronometer: NSObject {
+	private var timer: Timer?
+	private var timeInterval: TimeInterval = 1.0
 
-	var isPlaying = false
-	var timerCurrentValue: TimeInterval = 0.0
+	public var isPlaying = false
+	public var timerCurrentValue: TimeInterval = 0.0
 
-	var timerDidUpdate: ((TimeInterval) -> ())?
-	var timerDidComplete: (() -> ())?
-	
-	override init() {
-		super.init()
-	}
+	public var timerDidUpdate: ((TimeInterval) -> ())?
+	public var timerDidComplete: (() -> ())?
 
-	init(withTimeInterval timeInterval: TimeInterval) {
+	public init(withTimeInterval timeInterval: TimeInterval = 0.0) {
 		super.init()
 
 		self.timeInterval = timeInterval
 	}
 
-	func start(shouldFire fire: Bool = true) {
+	public func start(shouldFire fire: Bool = true) {
 		self.timer = Timer(timeInterval: self.timeInterval, target: self, selector: #selector(Chronometer.timerDidTrigger), userInfo: nil, repeats: true)
 		RunLoop.main.add(self.timer!, forMode: RunLoopMode.defaultRunLoopMode)
 		self.timer?.fire()
 		self.isPlaying = true
 	}
 
-	func pause() {
+	public func pause() {
 		self.timer?.invalidate()
 		self.timer = nil
 		self.isPlaying = false
 	}
 
-	func stop() {
+	public func stop() {
 		self.isPlaying = false
 		self.timer?.invalidate()
 		self.timer = nil
