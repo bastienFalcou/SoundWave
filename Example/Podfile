@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SoundWave_Example' do
+  pod 'SoundWave', :path => '../'
+
+  target 'SoundWave_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
