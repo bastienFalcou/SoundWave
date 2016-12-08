@@ -39,15 +39,15 @@
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-LH-znw" userLabel="Options Container View">
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
-                                        <color key="minimumTrackTintColor" red="0.23921568630000001" green="0.10980392160000001" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="maximumTrackTintColor" red="0.23974099809999999" green="0.077699028449999999" blue="0.45831157989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
+                                        <color key="minimumTrackTintColor" white="0.0" alpha="0.42957668439716312" colorSpace="calibratedWhite"/>
+                                        <color key="maximumTrackTintColor" white="0.0" alpha="0.24362810283687944" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="sliderValueDidChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="oqO-uV-JOQ"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Visualization Time Interval" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-WQ-lVf">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Visualization Time Interval" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-WQ-lVf">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VaX-WQ-lVf" secondAttribute="height" multiplier="109:30" id="jaB-U6-x3Q"/>
                                             <constraint firstAttribute="width" constant="109" id="yGs-68-XGa"/>
@@ -56,7 +56,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch Color Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sH-k1-bTm">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch Color Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sH-k1-bTm">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="109" id="6hX-Zm-q1T"/>
                                             <constraint firstAttribute="width" secondItem="0sH-k1-bTm" secondAttribute="height" multiplier="109:30" id="Wnm-xz-KF0"/>
@@ -65,13 +65,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-da-G84">
+                                    <switch opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-da-G84">
                                         <color key="onTintColor" red="0.23974099809999999" green="0.077699028449999999" blue="0.45831157989999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="switchValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ftC-2x-e0w"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-9f-EmN">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-9f-EmN">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="qES-dX-eib"/>
                                         </constraints>
@@ -83,7 +83,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.35458222517730498" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="VaX-WQ-lVf" firstAttribute="top" secondItem="fRc-LH-znw" secondAttribute="top" constant="12" id="0mw-Ga-Vyj"/>
-                                    <constraint firstAttribute="height" constant="88" id="2am-Gr-yrK"/>
+                                    <constraint firstAttribute="height" id="2am-Gr-yrK"/>
                                     <constraint firstItem="A4p-da-G84" firstAttribute="trailing" secondItem="LUg-zW-Kj7" secondAttribute="trailing" id="7IE-YM-FX7"/>
                                     <constraint firstAttribute="trailing" secondItem="LUg-zW-Kj7" secondAttribute="trailing" constant="18" id="7MF-Xm-U5x"/>
                                     <constraint firstItem="VaX-WQ-lVf" firstAttribute="leading" secondItem="fRc-LH-znw" secondAttribute="leading" constant="12" id="Awp-2y-bsr"/>
@@ -118,7 +118,7 @@
                                     <constraint firstAttribute="height" id="94Y-lu-enE"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-13-8Eo">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-13-8Eo">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="BtT-fp-Ww4"/>
                                     <constraint firstAttribute="width" constant="50" id="pkv-zS-jY1"/>

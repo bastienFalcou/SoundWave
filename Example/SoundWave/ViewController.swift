@@ -38,9 +38,9 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBOutlet var audioVisualizationView: AudioVisualizationView!
 	@IBOutlet var recordButton: UIButton!
 	@IBOutlet var clearButton: UIButton!
+	@IBOutlet var audioVisualizationView: AudioVisualizationView!
 	
 	@IBOutlet var optionsView: UIView!
 	@IBOutlet var optionsViewHeightConstraint: NSLayoutConstraint!
@@ -53,6 +53,7 @@ class ViewController: UIViewController {
 		didSet {
 			self.recordButton.setImage(self.currentState.buttonImage, for: UIControlState())
 			self.audioVisualizationView.audioVisualizationMode = self.currentState.audioVisualizationMode
+			self.clearButton.isHidden = self.currentState == .ready || self.currentState == .playing || self.currentState == .recording
 		}
 	}
 	
@@ -60,7 +61,7 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-				
+		
 		self.viewModel.askAudioRecordingPermission { granted in
 			print("user answered permission with \(granted ? "positive" : "negative") response")
 		}
@@ -138,6 +139,7 @@ class ViewController: UIViewController {
 		do {
 			try self.viewModel.resetRecording()
 			self.audioVisualizationView.reset()
+			self.currentState = .ready
 		} catch {
 			print("couldn't clear current record for reason \(error.localizedDescription)")
 		}
@@ -145,11 +147,19 @@ class ViewController: UIViewController {
 	
 	@IBAction func switchValueChanged(_ sender: AnyObject) {
 		let theSwitch = sender as! UISwitch
+		if theSwitch.isOn {
+			self.view.backgroundColor = UIColor.mainBackgroundPurple
+			self.audioVisualizationView.gradientStartColor = UIColor.audioVisualizationPurpleGradientStart
+			self.audioVisualizationView.gradientEndColor = UIColor.audioVisualizationPurpleGradientEnd
+		} else {
+			self.view.backgroundColor = UIColor.mainBackgroundGray
+			self.audioVisualizationView.gradientStartColor = UIColor.audioVisualizationGrayGradientStart
+			self.audioVisualizationView.gradientEndColor = UIColor.audioVisualizationGrayGradientEnd
+		}
 	}
 	
 	@IBAction func sliderValueDidChange(_ sender: AnyObject) {
 		self.viewModel.audioVisualizationTimeInterval = TimeInterval(self.audioVisualizationTimeIntervalSlider.value)
-		self.audioVisualizationView.audioVisualizationTimeInterval = self.viewModel.audioVisualizationTimeInterval
 		self.audioVisualizationTimeIntervalLabel.text = String(format: "%.2f", self.viewModel.audioVisualizationTimeInterval)
 	}
 	
