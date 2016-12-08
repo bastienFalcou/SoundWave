@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +39,7 @@
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-LH-znw" userLabel="Options Container View">
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
                                         <color key="minimumTrackTintColor" red="0.23921568630000001" green="0.10980392160000001" blue="0.41176470590000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="maximumTrackTintColor" red="0.23974099809999999" green="0.077699028449999999" blue="0.45831157989999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,6 +72,9 @@
                                         </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-9f-EmN">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="qES-dX-eib"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -108,6 +112,28 @@
                                     <action selector="recordButtonDidTouchUpInside:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eoy-ub-E91"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLF-NW-YCz" userLabel="Left Spacer">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" id="94Y-lu-enE"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbh-13-8Eo">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="BtT-fp-Ww4"/>
+                                    <constraint firstAttribute="width" constant="50" id="pkv-zS-jY1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="♺">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clearButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="jv3-zm-MqK"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4B-DJ-HmT" userLabel="Right Spacer">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.23921568627450979" green="0.10980392156862745" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -119,17 +145,27 @@
                             <constraint firstItem="fRc-LH-znw" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LRP-jA-Xyn"/>
                             <constraint firstAttribute="trailing" secondItem="a0i-Qg-Xrr" secondAttribute="trailing" id="QCu-rz-ywH"/>
                             <constraint firstItem="Gag-2O-ZYX" firstAttribute="centerY" secondItem="Hnn-af-JRi" secondAttribute="centerY" id="Wdd-5V-b6P"/>
+                            <constraint firstItem="i4B-DJ-HmT" firstAttribute="height" secondItem="tLF-NW-YCz" secondAttribute="height" id="Y4n-4S-svp"/>
+                            <constraint firstItem="tLF-NW-YCz" firstAttribute="leading" secondItem="7if-gx-5EB" secondAttribute="trailing" id="ZtV-1h-um7"/>
                             <constraint firstItem="7if-gx-5EB" firstAttribute="top" secondItem="a0i-Qg-Xrr" secondAttribute="bottom" constant="6" id="bjL-FX-zX6"/>
                             <constraint firstItem="Hnn-af-JRi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="7" id="lMk-JQ-wKH"/>
+                            <constraint firstAttribute="trailing" secondItem="i4B-DJ-HmT" secondAttribute="trailing" id="mn0-gw-tSt"/>
+                            <constraint firstItem="tLF-NW-YCz" firstAttribute="centerY" secondItem="7if-gx-5EB" secondAttribute="centerY" id="oP1-dL-Svv"/>
+                            <constraint firstItem="i4B-DJ-HmT" firstAttribute="width" secondItem="tLF-NW-YCz" secondAttribute="width" multiplier="1:0.5" id="rYS-pc-Pea"/>
                             <constraint firstItem="a0i-Qg-Xrr" firstAttribute="top" secondItem="fRc-LH-znw" secondAttribute="bottom" id="sgW-Jr-xsz"/>
+                            <constraint firstItem="i4B-DJ-HmT" firstAttribute="centerY" secondItem="7if-gx-5EB" secondAttribute="centerY" id="uaJ-th-KYW"/>
                             <constraint firstItem="a0i-Qg-Xrr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="xmj-70-tzh"/>
+                            <constraint firstItem="Rbh-13-8Eo" firstAttribute="centerY" secondItem="7if-gx-5EB" secondAttribute="centerY" id="xn8-Pc-zNg"/>
+                            <constraint firstItem="i4B-DJ-HmT" firstAttribute="leading" secondItem="Rbh-13-8Eo" secondAttribute="trailing" id="z9k-KX-xwm"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="7if-gx-5EB" secondAttribute="bottom" constant="8" id="z9t-hx-Ndr"/>
+                            <constraint firstItem="Rbh-13-8Eo" firstAttribute="leading" secondItem="tLF-NW-YCz" secondAttribute="trailing" id="zQn-uW-rvD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="audioVisualizationTimeIntervalLabel" destination="KJG-9f-EmN" id="1o9-jS-ycp"/>
                         <outlet property="audioVisualizationTimeIntervalSlider" destination="LUg-zW-Kj7" id="9kW-HD-07k"/>
                         <outlet property="audioVisualizationView" destination="a0i-Qg-Xrr" id="7yu-b8-9qj"/>
+                        <outlet property="clearButton" destination="Rbh-13-8Eo" id="3Ys-Rh-Ps9"/>
                         <outlet property="optionsView" destination="fRc-LH-znw" id="n7v-hI-fR7"/>
                         <outlet property="optionsViewHeightConstraint" destination="2am-Gr-yrK" id="igJ-R6-ojs"/>
                         <outlet property="recordButton" destination="7if-gx-5EB" id="6t3-iQ-wbs"/>

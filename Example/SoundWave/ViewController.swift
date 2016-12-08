@@ -40,6 +40,8 @@ class ViewController: UIViewController {
 	
 	@IBOutlet var audioVisualizationView: AudioVisualizationView!
 	@IBOutlet var recordButton: UIButton!
+	@IBOutlet var clearButton: UIButton!
+	
 	@IBOutlet var optionsView: UIView!
 	@IBOutlet var optionsViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet var audioVisualizationTimeIntervalLabel: UILabel!
@@ -132,12 +134,12 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func optionsButtonTapped(_ sender: AnyObject) {
-		let shouldExpand = self.optionsViewHeightConstraint.constant == 0
-		self.optionsViewHeightConstraint.constant = shouldExpand ? 90.0 : 0.0
-		UIView.animate(withDuration: 0.2) {
-			self.optionsView.subviews.forEach { $0.alpha = shouldExpand ? 1.0 : 0.0 }
-			self.view.layoutIfNeeded()
+	@IBAction func clearButtonTapped(_ sender: AnyObject) {
+		do {
+			try self.viewModel.resetRecording()
+			self.audioVisualizationView.reset()
+		} catch {
+			print("couldn't clear current record for reason \(error.localizedDescription)")
 		}
 	}
 	
@@ -147,6 +149,16 @@ class ViewController: UIViewController {
 	
 	@IBAction func sliderValueDidChange(_ sender: AnyObject) {
 		self.viewModel.audioVisualizationTimeInterval = TimeInterval(self.audioVisualizationTimeIntervalSlider.value)
-		self.audioVisualizationTimeIntervalLabel.text = "\(self.audioVisualizationTimeIntervalSlider.value)"
+		self.audioVisualizationView.audioVisualizationTimeInterval = self.viewModel.audioVisualizationTimeInterval
+		self.audioVisualizationTimeIntervalLabel.text = String(format: "%.2f", self.viewModel.audioVisualizationTimeInterval)
+	}
+	
+	@IBAction func optionsButtonTapped(_ sender: AnyObject) {
+		let shouldExpand = self.optionsViewHeightConstraint.constant == 0
+		self.optionsViewHeightConstraint.constant = shouldExpand ? 90.0 : 0.0
+		UIView.animate(withDuration: 0.2) {
+			self.optionsView.subviews.forEach { $0.alpha = shouldExpand ? 1.0 : 0.0 }
+			self.view.layoutIfNeeded()
+		}
 	}
 }

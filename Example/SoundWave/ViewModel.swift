@@ -14,12 +14,7 @@ struct SoundRecord {
 }
 
 final class ViewModel {
-	var audioVisualizationTimeInterval: TimeInterval = 0.05 { // Time interval between each metering bar representation
-		didSet {
-			AudioRecorderManager.shared.audioVisualizationTimeInterval = self.audioVisualizationTimeInterval
-			AudioPlayerManager.shared.audioVisualizationTimeInterval = self.audioVisualizationTimeInterval
-		}
-	}
+	var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
 	
 	var currentAudioRecord: SoundRecord?
 	private var isPlaying = false
@@ -48,7 +43,7 @@ final class ViewModel {
 	}
 	
 	func startRecording(completion: @escaping (SoundRecord?, Error?) -> Void) {
-		AudioRecorderManager.shared.startRecording { [weak self] url, error in
+		AudioRecorderManager.shared.startRecording(with: self.audioVisualizationTimeInterval, completion: { [weak self] url, error in
 			guard let url = url else {
 				completion(nil, error!)
 				return
@@ -57,7 +52,7 @@ final class ViewModel {
 			self?.currentAudioRecord = SoundRecord(audioFilePathLocal: url, meteringLevels: [])
 			print("sound record created at url \(url.absoluteString))")
 			completion(self?.currentAudioRecord, nil)
-		}
+		})
 	}
 	
 	func stopRecording() throws {
@@ -85,7 +80,7 @@ final class ViewModel {
 			}
 			
 			self.isPlaying = true
-			return try AudioPlayerManager.shared.play(at: audioFilePath)
+			return try AudioPlayerManager.shared.play(at: audioFilePath, with: self.audioVisualizationTimeInterval)
 		}
 	}
 	
