@@ -40,6 +40,10 @@ class ViewController: UIViewController {
 	
 	@IBOutlet var audioVisualizationView: AudioVisualizationView!
 	@IBOutlet var recordButton: UIButton!
+	@IBOutlet var optionsView: UIView!
+	@IBOutlet var optionsViewHeightConstraint: NSLayoutConstraint!
+	@IBOutlet var audioVisualizationTimeIntervalLabel: UILabel!
+	@IBOutlet var audioVisualizationTimeIntervalSlider: UISlider!
 	
 	let viewModel = ViewModel()
 
@@ -54,7 +58,7 @@ class ViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+				
 		self.viewModel.askAudioRecordingPermission { granted in
 			print("user answered permission with \(granted ? "positive" : "negative") response")
 		}
@@ -126,5 +130,23 @@ class ViewController: UIViewController {
 		default:
 			break
 		}
+	}
+	
+	@IBAction func optionsButtonTapped(_ sender: AnyObject) {
+		let shouldExpand = self.optionsViewHeightConstraint.constant == 0
+		self.optionsViewHeightConstraint.constant = shouldExpand ? 90.0 : 0.0
+		UIView.animate(withDuration: 0.2) {
+			self.optionsView.subviews.forEach { $0.alpha = shouldExpand ? 1.0 : 0.0 }
+			self.view.layoutIfNeeded()
+		}
+	}
+	
+	@IBAction func switchValueChanged(_ sender: AnyObject) {
+		let theSwitch = sender as! UISwitch
+	}
+	
+	@IBAction func sliderValueDidChange(_ sender: AnyObject) {
+		self.viewModel.audioVisualizationTimeInterval = TimeInterval(self.audioVisualizationTimeIntervalSlider.value)
+		self.audioVisualizationTimeIntervalLabel.text = "\(self.audioVisualizationTimeIntervalSlider.value)"
 	}
 }

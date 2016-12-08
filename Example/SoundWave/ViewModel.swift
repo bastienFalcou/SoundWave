@@ -14,8 +14,13 @@ struct SoundRecord {
 }
 
 final class ViewModel {
-	static var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
-
+	var audioVisualizationTimeInterval: TimeInterval = 0.05 { // Time interval between each metering bar representation
+		didSet {
+			AudioRecorderManager.shared.audioVisualizationTimeInterval = self.audioVisualizationTimeInterval
+			AudioPlayerManager.shared.audioVisualizationTimeInterval = self.audioVisualizationTimeInterval
+		}
+	}
+	
 	var currentAudioRecord: SoundRecord?
 	private var isPlaying = false
 	
