@@ -97,7 +97,18 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a0i-Qg-Xrr" customClass="AudioVisualizationView" customModule="SoundWave">
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="V9R-Wv-xov"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientStartColor">
+                                        <color key="value" red="0.23974099809999999" green="0.077699028449999999" blue="0.45831157989999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="gradientEndColor">
+                                        <color key="value" red="0.64961272599999997" green="0.58630252670000005" blue="0.8832543155" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7if-gx-5EB">
                                 <constraints>
@@ -135,7 +146,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.23921568627450979" green="0.10980392156862745" blue="0.41176470588235292" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7if-gx-5EB" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" constant="-0.5" id="4bj-ii-34h"/>
                             <constraint firstItem="Gag-2O-ZYX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="16" id="5QI-Oj-lrc"/>
@@ -147,7 +158,6 @@
                             <constraint firstItem="Gag-2O-ZYX" firstAttribute="centerY" secondItem="Hnn-af-JRi" secondAttribute="centerY" id="Wdd-5V-b6P"/>
                             <constraint firstItem="i4B-DJ-HmT" firstAttribute="height" secondItem="tLF-NW-YCz" secondAttribute="height" id="Y4n-4S-svp"/>
                             <constraint firstItem="tLF-NW-YCz" firstAttribute="leading" secondItem="7if-gx-5EB" secondAttribute="trailing" id="ZtV-1h-um7"/>
-                            <constraint firstItem="7if-gx-5EB" firstAttribute="top" secondItem="a0i-Qg-Xrr" secondAttribute="bottom" constant="6" id="bjL-FX-zX6"/>
                             <constraint firstItem="Hnn-af-JRi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="7" id="lMk-JQ-wKH"/>
                             <constraint firstAttribute="trailing" secondItem="i4B-DJ-HmT" secondAttribute="trailing" id="mn0-gw-tSt"/>
                             <constraint firstItem="tLF-NW-YCz" firstAttribute="centerY" secondItem="7if-gx-5EB" secondAttribute="centerY" id="oP1-dL-Svv"/>
