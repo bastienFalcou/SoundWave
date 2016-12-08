@@ -120,7 +120,7 @@ If there are **not enough** / **too many** values to fit the screen, those value
 ```swift
 self.audioVisualizationView.audioVisualizationMode = .read
 self.audioVisualizationView.meteringLevelsArray = [0.1, 0.67, 0.13, 0.78, 0.31]
-self.play(forDuration: 5.0)
+self.play(for: 5.0)
 ```
 
 Specify the duration of your sound for the view to play exactly at the same pace (and your metering levels fit the sound power heard by the user).
@@ -129,7 +129,7 @@ Specify the duration of your sound for the view to play exactly at the same pace
 
 ```swift
 self.audioVisualizationView.pause()
-self.audioVisualizationView.play(forDuration: durationLeft)
+self.audioVisualizationView.play(for: durationLeft)
 self.audioVisualizationView.stop()
 ```
 

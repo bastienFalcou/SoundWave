@@ -49,11 +49,11 @@ public class AudioVisualizationView: BaseNibView {
 	}
 
 	static var audioVisualizationDefaultGradientStartColor: UIColor {
-		return UIColor(red: 76.0 / 255.0, green: 62.0 / 255.0, blue: 127.0 / 255.0, alpha: 1.0)
+		return UIColor(red: 61.0 / 255.0, green: 20.0 / 255.0, blue: 117.0 / 255.0, alpha: 1.0)
 	}
 	
 	static var audioVisualizationDefaultGradientEndColor: UIColor {
-		return UIColor(red: 133.0 / 255.0, green: 112.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
+		return UIColor(red: 166.0 / 255.0, green: 150.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
 	}
 	
 	@IBInspectable public var gradientStartColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientStartColor {
@@ -133,7 +133,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	// PRAGMA: - Play Mode Handling
 
-	public func play(forDuration duration: TimeInterval) {
+	public func play(for duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
 		}
