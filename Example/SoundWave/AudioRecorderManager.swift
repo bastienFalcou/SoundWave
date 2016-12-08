@@ -28,7 +28,6 @@ final class AudioRecorderManager: NSObject {
 	}
 
 	var currentRecordPath: URL?
-	var audioVisualizationTimeInterval: TimeInterval = 0.05
 
 	private var recorder: AVAudioRecorder?
 	private var audioMeteringLevelTimer: Timer?
@@ -41,10 +40,10 @@ final class AudioRecorderManager: NSObject {
 		}
 	}
 
-	func startRecording(completion: @escaping (URL?, Error?) -> Void) {
+	func startRecording(with audioVisualizationTimeInterval: TimeInterval = 0.05, completion: @escaping (URL?, Error?) -> Void) {
 		func startRecordingReturn() {
 			do {
-				completion(try internalStartRecording(), nil)
+				completion(try internalStartRecording(with: audioVisualizationTimeInterval), nil)
 			} catch {
 				completion(nil, error)
 			}
@@ -59,7 +58,7 @@ final class AudioRecorderManager: NSObject {
 		}
 	}
 	
-	fileprivate func internalStartRecording() throws -> URL {
+	fileprivate func internalStartRecording(with audioVisualizationTimeInterval: TimeInterval) throws -> URL {
 		if self.isRunning {
 			throw AudioErrorType.alreadyPlaying
 		}
@@ -70,7 +69,7 @@ final class AudioRecorderManager: NSObject {
 			AVEncoderBitRateKey : self.encoderBitRate,
 			AVNumberOfChannelsKey: self.numberOfChannels,
 			AVSampleRateKey : self.sampleRate
-			] as [String : Any]
+		] as [String : Any]
 		
 		guard let path = URL.documentsPath(forFileName: self.audioFileNamePrefix + NSUUID().uuidString) else {
 			print("Incorrect path for new audio file")
@@ -94,7 +93,7 @@ final class AudioRecorderManager: NSObject {
 			throw AudioErrorType.recordFailed
 		}
 		
-		self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: self.audioVisualizationTimeInterval, target: self,
+		self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: audioVisualizationTimeInterval, target: self,
 			selector: #selector(AudioRecorderManager.timerDidUpdateMeter), userInfo: nil, repeats: true)
 		
 		print("Audio Recorder did start - creating file at index: \(path.absoluteString)")

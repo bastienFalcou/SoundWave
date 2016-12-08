@@ -56,13 +56,13 @@ public class AudioVisualizationView: BaseNibView {
 		return UIColor(red: 133.0 / 255.0, green: 112.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
 	}
 	
-	@IBInspectable var gradientStartColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientStartColor {
+	@IBInspectable public var gradientStartColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientStartColor {
 		didSet {
 			self.setNeedsDisplay()
 		}
 	}
 
-	@IBInspectable var gradientEndColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientEndColor {
+	@IBInspectable public var gradientEndColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientEndColor {
 		didSet {
 			self.setNeedsDisplay()
 		}

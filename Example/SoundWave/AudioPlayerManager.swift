@@ -19,15 +19,13 @@ final class AudioPlayerManager: NSObject {
 		}
 		return true
 	}
-	
-	var audioVisualizationTimeInterval: TimeInterval = 0.05
 
 	private var audioPlayer: AVAudioPlayer?
 	private var audioMeteringLevelTimer: Timer?
 
 	// MARK: - Reinit and play from the beginning
 
-	func play(at url: URL) throws -> TimeInterval {
+	func play(at url: URL, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
 		if AudioRecorderManager.shared.isRunning {
 			print("Audio Player did fail to start: AVFoundation is recording")
 			throw AudioErrorType.alreadyRecording
@@ -44,27 +42,27 @@ final class AudioPlayerManager: NSObject {
 		}
 
 		try self.audioPlayer = AVAudioPlayer(contentsOf: url)
-		self.setupPlayer()
+		self.setupPlayer(with: audioVisualizationTimeInterval)
 		print("Started to play sound")
 
 		return self.audioPlayer!.duration
 	}
 
-	func play(_ data: Data) throws -> TimeInterval {
+	func play(_ data: Data, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
 		try self.audioPlayer = AVAudioPlayer(data: data)
-		self.setupPlayer()
+		self.setupPlayer(with: audioVisualizationTimeInterval)
 		print("Started to play sound")
 
 		return self.audioPlayer!.duration
 	}
 	
-	func setupPlayer() {
+	private func setupPlayer(with audioVisualizationTimeInterval: TimeInterval) {
 		if let player = self.audioPlayer {
 			player.play()
 			player.isMeteringEnabled = true
 			player.delegate = self
 			
-			self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: self.audioVisualizationTimeInterval, target: self,
+			self.audioMeteringLevelTimer = Timer.scheduledTimer(timeInterval: audioVisualizationTimeInterval, target: self,
 				selector: #selector(AudioPlayerManager.timerDidUpdateMeter), userInfo: nil, repeats: true)
 		}
 	}
