@@ -45,7 +45,8 @@ class ViewController: UIViewController {
 	@IBOutlet var optionsView: UIView!
 	@IBOutlet var optionsViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet var audioVisualizationTimeIntervalLabel: UILabel!
-	@IBOutlet var audioVisualizationTimeIntervalSlider: UISlider!
+	@IBOutlet var meteringLevelBarWidthLabel: UILabel!
+	@IBOutlet var meteringLevelSpaceInterBarLabel: UILabel!
 	
 	let viewModel = ViewModel()
 
@@ -62,9 +63,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.viewModel.askAudioRecordingPermission { granted in
-			print("user answered permission with \(granted ? "positive" : "negative") response")
-		}
+		self.viewModel.askAudioRecordingPermission()
 		
 		self.viewModel.audioMeteringLevelUpdate = { [weak self] meteringLevel in
 			guard let this = self, this.audioVisualizationView.audioVisualizationMode == .write else {
@@ -85,7 +84,7 @@ class ViewController: UIViewController {
 		if self.currentState == .ready {
 			self.viewModel.startRecording { [weak self] soundRecord, error in
 				if let error = error {
-					print("an error occurred when trying to record sound: \(error.localizedDescription)")
+					self?.showAlert(with: error)
 					return
 				}
 				
@@ -111,7 +110,7 @@ class ViewController: UIViewController {
 				self.currentState = .recorded
 			} catch {
 				self.currentState = .ready
-				print("couldn't stop recording for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		case .recorded, .paused:
 			do {
@@ -120,7 +119,7 @@ class ViewController: UIViewController {
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
 				self.audioVisualizationView.play(for: duration)
 			} catch {
-				print("couldn't start playing for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		case .playing:
 			do {
@@ -128,7 +127,7 @@ class ViewController: UIViewController {
 				self.currentState = .paused
 				self.audioVisualizationView.pause()
 			} catch {
-				print("couldn't pause playing for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		default:
 			break
@@ -141,7 +140,7 @@ class ViewController: UIViewController {
 			self.audioVisualizationView.reset()
 			self.currentState = .ready
 		} catch {
-			print("couldn't clear current record for reason \(error.localizedDescription)")
+			self.showAlert(with: error)
 		}
 	}
 	
@@ -158,14 +157,27 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func sliderValueDidChange(_ sender: AnyObject) {
-		self.viewModel.audioVisualizationTimeInterval = TimeInterval(self.audioVisualizationTimeIntervalSlider.value)
+	@IBAction func audioVisualizationTimeIntervalSliderValueDidChange(_ sender: AnyObject) {
+		let audioVisualizationTimeIntervalSlider = sender as! UISlider
+		self.viewModel.audioVisualizationTimeInterval = TimeInterval(audioVisualizationTimeIntervalSlider.value)
 		self.audioVisualizationTimeIntervalLabel.text = String(format: "%.2f", self.viewModel.audioVisualizationTimeInterval)
+	}
+
+	@IBAction func meteringLevelBarWidthSliderValueChanged(_ sender: AnyObject) {
+		let meteringLevelBarWidthSlider = sender as! UISlider
+		self.audioVisualizationView.meteringLevelBarWidth = CGFloat(meteringLevelBarWidthSlider.value)
+		self.meteringLevelBarWidthLabel.text = String(format: "%.2f", self.audioVisualizationView.meteringLevelBarWidth)
+	}
+	
+	@IBAction func meteringLevelSpaceInterBarSliderValueChanged(_ sender: AnyObject) {
+		let meteringLevelSpaceInterBarSlider = sender as! UISlider
+		self.audioVisualizationView.meteringLevelBarInterItem = CGFloat(meteringLevelSpaceInterBarSlider.value)
+		self.meteringLevelSpaceInterBarLabel.text = String(format: "%.2f", self.audioVisualizationView.meteringLevelBarWidth)
 	}
 	
 	@IBAction func optionsButtonTapped(_ sender: AnyObject) {
 		let shouldExpand = self.optionsViewHeightConstraint.constant == 0
-		self.optionsViewHeightConstraint.constant = shouldExpand ? 90.0 : 0.0
+		self.optionsViewHeightConstraint.constant = shouldExpand ? 165.0 : 0.0
 		UIView.animate(withDuration: 0.2) {
 			self.optionsView.subviews.forEach { $0.alpha = shouldExpand ? 1.0 : 0.0 }
 			self.view.layoutIfNeeded()

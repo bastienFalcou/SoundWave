@@ -38,7 +38,7 @@ final class ViewModel {
 	
 	// MARK: - Recording
 	
-	func askAudioRecordingPermission(completion: @escaping (Bool) -> Void) {
+	func askAudioRecordingPermission(completion: ((Bool) -> Void)? = nil) {
 		return AudioRecorderManager.shared.askPermission(completion: completion)
 	}
 	

@@ -80,7 +80,7 @@ self.audioVisualizationView.gradientStartColor = UIColor.white
 self.audioVisualizationView.gradientEndColor = UIColor.black
 ```
 
-> Those values can be changed from Interface Builder because declared as `IBInspectable`.
+> Those variables declared as `IBInspectable` can be set from Interface Builder.
 
 ### Display sound metering levels on the fly
 
