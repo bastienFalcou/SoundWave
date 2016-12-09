@@ -32,10 +32,10 @@ final class AudioRecorderManager: NSObject {
 	private var recorder: AVAudioRecorder?
 	private var audioMeteringLevelTimer: Timer?
 
-	func askPermission(completion: @escaping (Bool) -> Void) {
+	func askPermission(completion: ((Bool) -> Void)? = nil) {
 		AVAudioSession.sharedInstance().requestRecordPermission { [weak self] granted in
 			self?.isPermissionGranted = granted
-			completion(granted)
+			completion?(granted)
 			print("Audio Recorder did not grant permission")
 		}
 	}

@@ -63,9 +63,7 @@ class ViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
-		self.viewModel.askAudioRecordingPermission { granted in
-			print("user answered permission with \(granted ? "positive" : "negative") response")
-		}
+		self.viewModel.askAudioRecordingPermission()
 		
 		self.viewModel.audioMeteringLevelUpdate = { [weak self] meteringLevel in
 			guard let this = self, this.audioVisualizationView.audioVisualizationMode == .write else {
@@ -86,7 +84,7 @@ class ViewController: UIViewController {
 		if self.currentState == .ready {
 			self.viewModel.startRecording { [weak self] soundRecord, error in
 				if let error = error {
-					print("an error occurred when trying to record sound: \(error.localizedDescription)")
+					self?.showAlert(with: error)
 					return
 				}
 				
@@ -112,7 +110,7 @@ class ViewController: UIViewController {
 				self.currentState = .recorded
 			} catch {
 				self.currentState = .ready
-				print("couldn't stop recording for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		case .recorded, .paused:
 			do {
@@ -121,7 +119,7 @@ class ViewController: UIViewController {
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
 				self.audioVisualizationView.play(for: duration)
 			} catch {
-				print("couldn't start playing for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		case .playing:
 			do {
@@ -129,7 +127,7 @@ class ViewController: UIViewController {
 				self.currentState = .paused
 				self.audioVisualizationView.pause()
 			} catch {
-				print("couldn't pause playing for reason \(error.localizedDescription)")
+				self.showAlert(with: error)
 			}
 		default:
 			break
@@ -142,7 +140,7 @@ class ViewController: UIViewController {
 			self.audioVisualizationView.reset()
 			self.currentState = .ready
 		} catch {
-			print("couldn't clear current record for reason \(error.localizedDescription)")
+			self.showAlert(with: error)
 		}
 	}
 	

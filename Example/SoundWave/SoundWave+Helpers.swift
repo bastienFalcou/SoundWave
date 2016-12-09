@@ -29,6 +29,16 @@ extension URL {
 	}
 }
 
+extension UIViewController {
+	func showAlert(with error: Error) {
+		let alertController = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+		alertController.addAction(UIAlertAction(title: "OK", style: .cancel) { _ in
+			alertController.dismiss(animated: true, completion: nil)
+		})
+		self.present(alertController, animated: true, completion: nil)
+	}
+}
+
 extension UIColor {
 	static var mainBackgroundPurple: UIColor {
 		return UIColor(red: 61.0 / 255.0, green: 28.0 / 255.0, blue: 105.0 / 255.0, alpha: 1.0)

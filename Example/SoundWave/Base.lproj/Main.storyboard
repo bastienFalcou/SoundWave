@@ -39,7 +39,7 @@
                             </label>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRc-LH-znw" userLabel="Options Container View">
                                 <subviews>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
+                                    <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.050000000000000003" minValue="0.01" maxValue="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="LUg-zW-Kj7">
                                         <color key="minimumTrackTintColor" white="0.0" alpha="0.42957668439716312" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.24362810283687944" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -47,7 +47,7 @@
                                             <action selector="audioVisualizationTimeIntervalSliderValueDidChange:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Qgd-96-EfZ"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Visualization Time Interval" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-WQ-lVf">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Visualization Time Interval" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaX-WQ-lVf">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="VaX-WQ-lVf" secondAttribute="height" multiplier="109:30" id="jaB-U6-x3Q"/>
                                             <constraint firstAttribute="width" constant="109" id="yGs-68-XGa"/>
@@ -56,7 +56,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch Color Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sH-k1-bTm">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch Color Theme" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sH-k1-bTm">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="109" id="6hX-Zm-q1T"/>
                                             <constraint firstAttribute="width" secondItem="0sH-k1-bTm" secondAttribute="height" multiplier="109:30" id="Wnm-xz-KF0"/>
@@ -65,13 +65,13 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-da-G84">
+                                    <switch opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A4p-da-G84">
                                         <color key="onTintColor" red="0.23974099809999999" green="0.077699028449999999" blue="0.45831157989999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="switchValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="ftC-2x-e0w"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-9f-EmN">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.05" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJG-9f-EmN">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="qES-dX-eib"/>
                                         </constraints>
@@ -79,7 +79,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="zbb-nR-pd2">
+                                    <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="zbb-nR-pd2">
                                         <color key="minimumTrackTintColor" white="0.0" alpha="0.42957668440000002" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.2436281028" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -87,7 +87,7 @@
                                             <action selector="meteringLevelBarWidthSliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="2CQ-62-YNq"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metering Level Bar Width" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYS-vx-OyN">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metering Level Bar Width" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYS-vx-OyN">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="dYS-vx-OyN" secondAttribute="height" multiplier="109:30" id="1Es-cF-SZt"/>
                                             <constraint firstAttribute="width" constant="109" id="EWc-bI-VtS"/>
@@ -96,7 +96,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkn-uy-zmp">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkn-uy-zmp">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="3Wo-wt-kcL"/>
                                         </constraints>
@@ -104,7 +104,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="lw8-ZQ-QMC">
+                                    <slider opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="2" minValue="1" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="lw8-ZQ-QMC">
                                         <color key="minimumTrackTintColor" white="0.0" alpha="0.42957668440000002" colorSpace="calibratedWhite"/>
                                         <color key="maximumTrackTintColor" white="0.0" alpha="0.2436281028" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -112,7 +112,7 @@
                                             <action selector="meteringLevelSpaceInterBarSliderValueChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="gkD-KP-ShW"/>
                                         </connections>
                                     </slider>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metering Level Space Inter Bar" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-ms-Q66">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Metering Level Space Inter Bar" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydh-ms-Q66">
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Ydh-ms-Q66" secondAttribute="height" multiplier="109:30" id="A1A-hy-9Eb"/>
                                             <constraint firstAttribute="width" constant="109" id="UjS-lI-Hub"/>
@@ -121,7 +121,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-0F-aft">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVF-0F-aft">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="28" id="qQv-13-Zq4"/>
                                         </constraints>
@@ -134,7 +134,7 @@
                                 <constraints>
                                     <constraint firstItem="Ydh-ms-Q66" firstAttribute="leading" secondItem="dYS-vx-OyN" secondAttribute="leading" id="0NV-gn-9qg"/>
                                     <constraint firstItem="VaX-WQ-lVf" firstAttribute="top" secondItem="fRc-LH-znw" secondAttribute="top" constant="12" id="0mw-Ga-Vyj"/>
-                                    <constraint firstAttribute="height" constant="165" id="2am-Gr-yrK"/>
+                                    <constraint firstAttribute="height" id="2am-Gr-yrK"/>
                                     <constraint firstItem="bkn-uy-zmp" firstAttribute="leading" secondItem="dYS-vx-OyN" secondAttribute="trailing" constant="8" id="34D-a3-W5T"/>
                                     <constraint firstItem="Ydh-ms-Q66" firstAttribute="width" secondItem="Ydh-ms-Q66" secondAttribute="height" multiplier="109:30" id="3mt-vC-PXu"/>
                                     <constraint firstItem="A4p-da-G84" firstAttribute="trailing" secondItem="LUg-zW-Kj7" secondAttribute="trailing" id="7IE-YM-FX7"/>
