@@ -13,9 +13,21 @@ public class AudioVisualizationView: BaseNibView {
 		case write
 	}
 
-	public var meteringLevelBarWidth: CGFloat = 3.0
-	public var meteringLevelBarInterItem: CGFloat = 2.0
-	public var meteringLevelBarCornerRadius: CGFloat = 2.0
+	@IBInspectable public var meteringLevelBarWidth: CGFloat = 3.0 {
+		didSet {
+			self.setNeedsDisplay()
+		}
+	}
+	@IBInspectable public var meteringLevelBarInterItem: CGFloat = 2.0 {
+		didSet {
+			self.setNeedsDisplay()
+		}
+	}
+	@IBInspectable public var meteringLevelBarCornerRadius: CGFloat = 2.0 {
+		didSet {
+			self.setNeedsDisplay()
+		}
+	}
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
 	
@@ -51,7 +63,6 @@ public class AudioVisualizationView: BaseNibView {
 	static var audioVisualizationDefaultGradientStartColor: UIColor {
 		return UIColor(red: 61.0 / 255.0, green: 20.0 / 255.0, blue: 117.0 / 255.0, alpha: 1.0)
 	}
-	
 	static var audioVisualizationDefaultGradientEndColor: UIColor {
 		return UIColor(red: 166.0 / 255.0, green: 150.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
 	}
@@ -61,7 +72,6 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
-
 	@IBInspectable public var gradientEndColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientEndColor {
 		didSet {
 			self.setNeedsDisplay()

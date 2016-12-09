@@ -47,6 +47,7 @@ class ViewController: UIViewController {
 	@IBOutlet var audioVisualizationTimeIntervalLabel: UILabel!
 	@IBOutlet var audioVisualizationTimeIntervalSlider: UISlider!
 	
+	
 	let viewModel = ViewModel()
 
 	var currentState: AudioRecodingState = .ready {

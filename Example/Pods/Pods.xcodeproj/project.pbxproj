@@ -384,6 +384,38 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		006806B03C740F60928BA2B7A6519375 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SoundWave/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SoundWave;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		02B93AF266674040D4B500C83036B486 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7C3EBF1A6D0AF3972BB0836B6473982C /* Pods-SoundWave_Example.debug.xcconfig */;
@@ -420,7 +452,7 @@
 			};
 			name = Debug;
 		};
-		0C3F09649F7AC2EC7BE32D1CE9B5DCCE /* Debug */ = {
+		27A05C1FE6395E1EF53A797648D72ADA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */;
 			buildSettings = {
@@ -438,7 +470,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SoundWave/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -602,38 +634,6 @@
 			};
 			name = Debug;
 		};
-		A4A6031BF673215E8F58E73F6DC9437A /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SoundWave/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SoundWave;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -698,8 +698,8 @@
 		92508F098C64231D3AAE2E6B223CE8A2 /* Build configuration list for PBXNativeTarget "SoundWave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0C3F09649F7AC2EC7BE32D1CE9B5DCCE /* Debug */,
-				A4A6031BF673215E8F58E73F6DC9437A /* Release */,
+				27A05C1FE6395E1EF53A797648D72ADA /* Debug */,
+				006806B03C740F60928BA2B7A6519375 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
