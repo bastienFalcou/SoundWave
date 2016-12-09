@@ -1,9 +1,10 @@
 ![SoundWave](Readme-Images/SoundWave.png)
 
-[![CI Status](http://img.shields.io/travis/Bastien Falcou/SoundWave.svg?style=flat)](https://travis-ci.org/Bastien Falcou/SoundWave)
+[![CI Status](http://img.shields.io/travis/bastienFalcou/SoundWave.svg?style=flat)](https://travis-ci.org/bastienFalcou/SoundWave)
 [![Version](https://img.shields.io/cocoapods/v/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
-[![License](https://img.shields.io/cocoapods/l/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 [![Platform](https://img.shields.io/cocoapods/p/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
+![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg)
+[![License](https://img.shields.io/cocoapods/l/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 
 SoundWave is a customizable view representing sounds over time.
 
