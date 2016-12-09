@@ -45,8 +45,8 @@ class ViewController: UIViewController {
 	@IBOutlet var optionsView: UIView!
 	@IBOutlet var optionsViewHeightConstraint: NSLayoutConstraint!
 	@IBOutlet var audioVisualizationTimeIntervalLabel: UILabel!
-	@IBOutlet var audioVisualizationTimeIntervalSlider: UISlider!
-	
+	@IBOutlet var meteringLevelBarWidthLabel: UILabel!
+	@IBOutlet var meteringLevelSpaceInterBarLabel: UILabel!
 	
 	let viewModel = ViewModel()
 
@@ -159,14 +159,27 @@ class ViewController: UIViewController {
 		}
 	}
 	
-	@IBAction func sliderValueDidChange(_ sender: AnyObject) {
-		self.viewModel.audioVisualizationTimeInterval = TimeInterval(self.audioVisualizationTimeIntervalSlider.value)
+	@IBAction func audioVisualizationTimeIntervalSliderValueDidChange(_ sender: AnyObject) {
+		let audioVisualizationTimeIntervalSlider = sender as! UISlider
+		self.viewModel.audioVisualizationTimeInterval = TimeInterval(audioVisualizationTimeIntervalSlider.value)
 		self.audioVisualizationTimeIntervalLabel.text = String(format: "%.2f", self.viewModel.audioVisualizationTimeInterval)
+	}
+
+	@IBAction func meteringLevelBarWidthSliderValueChanged(_ sender: AnyObject) {
+		let meteringLevelBarWidthSlider = sender as! UISlider
+		self.audioVisualizationView.meteringLevelBarWidth = CGFloat(meteringLevelBarWidthSlider.value)
+		self.meteringLevelBarWidthLabel.text = String(format: "%.2f", self.audioVisualizationView.meteringLevelBarWidth)
+	}
+	
+	@IBAction func meteringLevelSpaceInterBarSliderValueChanged(_ sender: AnyObject) {
+		let meteringLevelSpaceInterBarSlider = sender as! UISlider
+		self.audioVisualizationView.meteringLevelBarInterItem = CGFloat(meteringLevelSpaceInterBarSlider.value)
+		self.meteringLevelSpaceInterBarLabel.text = String(format: "%.2f", self.audioVisualizationView.meteringLevelBarWidth)
 	}
 	
 	@IBAction func optionsButtonTapped(_ sender: AnyObject) {
 		let shouldExpand = self.optionsViewHeightConstraint.constant == 0
-		self.optionsViewHeightConstraint.constant = shouldExpand ? 90.0 : 0.0
+		self.optionsViewHeightConstraint.constant = shouldExpand ? 165.0 : 0.0
 		UIView.animate(withDuration: 0.2) {
 			self.optionsView.subviews.forEach { $0.alpha = shouldExpand ? 1.0 : 0.0 }
 			self.view.layoutIfNeeded()
