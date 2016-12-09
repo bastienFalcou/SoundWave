@@ -11,3 +11,4 @@ language: objective-c
 # - pod install --project-directory=Example
 script:
 - pod lib lint
+- xcodebuild clean build -workspace Example/SoundWave.xcworkspace -scheme 'SoundWave-Example' -sdk iphonesimulator PLATFORM_NAME=iphonesimulator -configuration Debug | xcpretty -c

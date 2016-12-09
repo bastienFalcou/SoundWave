@@ -1,9 +1,10 @@
 ![SoundWave](Readme-Images/SoundWave.png)
 
-[![CI Status](http://img.shields.io/travis/Bastien Falcou/SoundWave.svg?style=flat)](https://travis-ci.org/Bastien Falcou/SoundWave)
+[![CI Status](http://img.shields.io/travis/bastienFalcou/SoundWave.svg?style=flat)](https://travis-ci.org/bastienFalcou/SoundWave)
 [![Version](https://img.shields.io/cocoapods/v/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg)
 [![License](https://img.shields.io/cocoapods/l/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
-[![Platform](https://img.shields.io/cocoapods/p/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 
 SoundWave is a customizable view representing sounds over time.
 
@@ -23,29 +24,27 @@ SoundWave is a customizable view representing sounds over time.
 
 ### CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. 
 
-```bash
-$ gem install cocoapods
-```
-
-To integrate SoundWave into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate **SoundWave** into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '9.0'
-use_frameworks!
-
-target '<Your Target Name>' do
-	pod "SoundWave"
-end
+pod "SoundWave"
 ```
 
-Then, run the following command:
+Run `$ pod install` to add the framework to your Xcode project.
 
-```bash
-$ pod install
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks. 
+
+To integrate **SoundWave** into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ruby
+github "bastienFalcou/SoundWave"
 ```
+
+Run `$ carthage update` to build the framework and drag the built `SoundWave.framework` into your Xcode project.
 
 ## Usage
 
