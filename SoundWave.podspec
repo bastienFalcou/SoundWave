@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SoundWave'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Illustrate your SoundWave on the fly 🚀'
   s.homepage         = 'https://github.com/bastienFalcou/SoundWave'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
