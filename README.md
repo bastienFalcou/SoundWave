@@ -2,8 +2,9 @@
 
 [![CI Status](http://img.shields.io/travis/bastienFalcou/SoundWave.svg?style=flat)](https://travis-ci.org/bastienFalcou/SoundWave)
 [![Version](https://img.shields.io/cocoapods/v/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
-[![Platform](https://img.shields.io/cocoapods/p/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg)
+[//]: # ([![Platform](https://img.shields.io/cocoapods/p/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave))
 [![License](https://img.shields.io/cocoapods/l/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 
 SoundWave is a customizable view representing sounds over time.
@@ -47,6 +48,25 @@ Then, run the following command:
 ```bash
 $ pod install
 ```
+
+### Carthage
+
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
+
+You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
+
+```bash
+$ brew update
+$ brew install carthage
+```
+
+To integrate SoundWave into your Xcode project using Carthage, specify it in your `Cartfile`:
+
+```ogdl
+github "bastienFalcou/SoundWave"
+```
+
+Run `carthage update` to build the framework and drag the built `SoundWave.framework` into your Xcode project.
 
 ## Usage
 
