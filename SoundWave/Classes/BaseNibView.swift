@@ -69,7 +69,7 @@ public class BaseNibView: UIView {
 	}
 	
 	private func createFromNib() {
-		guard let contentView = self.contentView else {
+		if self.contentView == nil {
 			return
 		}
 		

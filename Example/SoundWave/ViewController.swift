@@ -118,7 +118,7 @@ class ViewController: UIViewController {
 				let duration = try self.viewModel.startPlaying()
 				self.currentState = .playing
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
-				self.audioVisualizationView.play(forDuration: duration)
+				self.audioVisualizationView.play(for: duration)
 			} catch {
 				print("couldn't start playing for reason \(error.localizedDescription)")
 			}

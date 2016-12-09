@@ -9,33 +9,28 @@
 Pod::Spec.new do |s|
   s.name             = 'SoundWave'
   s.version          = '0.1.0'
-  s.summary          = 'Illustrate your SoundWave on the fly.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/SoundWave'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.summary          = 'Illustrate your SoundWave on the fly 🚀'
+  s.homepage         = 'https://github.com/bastienFalcou/SoundWave'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Bastien Falcou' => 'bastien.falcou@hotmail.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/SoundWave.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.source           = { :git => 'https://github.com/bastienFalcou/SoundWave.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/BastienFalcou'
 
-  s.ios.deployment_target = '8.0'
+  s.description      = <<-DESC
+    SoundWave is a customizable view representing sounds over time:
+    - Add and display audio metering level values on the fly
+    - Set array of pre-existing audio metering level and play / pause / resume
+    - Customize background, gradient start and end colors, metering level bar properties, etc.
+                       DESC
 
+  s.ios.deployment_target = '9.0'
   s.source_files = 'SoundWave/Classes/**/*'
   
   # s.resource_bundles = {
   #   'SoundWave' => ['SoundWave/Assets/*.png']
   # }
 
+  # s.screenshots = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
