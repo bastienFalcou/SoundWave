@@ -118,7 +118,7 @@ If there are **not enough** / **too many** values to fit the screen, those value
 
 ```swift
 self.audioVisualizationView.audioVisualizationMode = .read
-self.audioVisualizationView.meteringLevelsArray = [0.1, 0.67, 0.13, 0.78, 0.31]
+self.audioVisualizationView.meteringLevels = [0.1, 0.67, 0.13, 0.78, 0.31]
 self.play(for: 5.0)
 ```
 
