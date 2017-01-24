@@ -9,13 +9,10 @@
 import UIKit
 
 extension URL {
-	static func checkPath(_ path: String) -> Bool {
-		var directory: ObjCBool = ObjCBool(false)
-		if FileManager.default.fileExists(atPath: path, isDirectory:&directory) {
-			return !directory.boolValue
-		}
-		return false
-	}
+    static func checkPath(_ path: String) -> Bool {
+        let isFileExist = FileManager.default.fileExists(atPath: path)
+        return isFileExist
+    }
 	
 	static func documentsPath(forFileName fileName: String) -> URL? {
 		let documents = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
