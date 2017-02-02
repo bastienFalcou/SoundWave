@@ -36,7 +36,7 @@ final class AudioPlayerManager: NSObject {
 			throw AudioErrorType.alreadyPlaying
 		}
 
-		if !URL.checkPath(url.absoluteString) {
+		if !URL.checkPath(url.path) {
 			print("Audio Player did fail to start: file doesn't exist")
 			throw AudioErrorType.audioFileWrongPath
 		}

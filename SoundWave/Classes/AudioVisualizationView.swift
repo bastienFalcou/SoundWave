@@ -38,7 +38,7 @@ public class AudioVisualizationView: BaseNibView {
 	// Do not specify any `gradientPercentage` for gradient calculating fitting size automatically.
 	public var currentGradientPercentage: Float?
 
-	public var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
+	private var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
 	private var meteringLevelsClusteredArray: [Float] = [] // Generated read mode array (values are percentage: 0.0 to 1.0)
 
 	private var currentMeteringLevelsArray: [Float] {
