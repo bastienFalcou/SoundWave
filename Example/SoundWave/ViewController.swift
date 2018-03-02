@@ -72,7 +72,7 @@ class ViewController: UIViewController {
 			this.audioVisualizationView.addMeteringLevel(meteringLevel)
 		}
 		
-		self.viewModel.audioDidFinish = { [weak self] _ in
+		self.viewModel.audioDidFinish = { [weak self] in
 			self?.currentState = .recorded
 			self?.audioVisualizationView.stop()
 		}
