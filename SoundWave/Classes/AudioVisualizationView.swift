@@ -175,13 +175,13 @@ public class AudioVisualizationView: BaseNibView {
     public func play(from position: TimeInterval = 0, fromTotalDuration duration: TimeInterval) {
       
         guard self.audioVisualizationMode == .read else {
-          fatalError("trying to read audio visualization in write mode")
+            fatalError("trying to read audio visualization in write mode")
         }
       
         guard self.meteringLevels != nil else {
-          fatalError("trying to read audio visualization of non initialized sound record")
+            fatalError("trying to read audio visualization of non initialized sound record")
         }
-        
+      
         self.currentGradientPercentage = Float(position) / Float(duration)
         self.setNeedsDisplay()
 
@@ -207,6 +207,26 @@ public class AudioVisualizationView: BaseNibView {
             this.currentGradientPercentage = Float(timerDuration) / Float(duration)
             this.setNeedsDisplay()
         }
+    }
+  
+    public func move(to position: TimeInterval, fromTotalDuration duration: TimeInterval) {
+      
+        guard let currentChronometer = self.playChronometer else {
+            return
+        }
+      
+        guard self.audioVisualizationMode == .read else {
+            fatalError("trying to read audio visualization in write mode")
+        }
+      
+        guard self.meteringLevels != nil else {
+            fatalError("trying to read audio visualization of non initialized sound record")
+        }
+      
+        currentChronometer.timerCurrentValue = position
+
+        self.currentGradientPercentage = Float(position) / Float(duration)
+        self.setNeedsDisplay()
     }
 
     public func pause() {
