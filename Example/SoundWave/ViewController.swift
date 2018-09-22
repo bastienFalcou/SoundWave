@@ -117,7 +117,7 @@ class ViewController: UIViewController {
 				let duration = try self.viewModel.startPlaying()
 				self.currentState = .playing
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
-				self.audioVisualizationView.play(for: duration)
+				self.audioVisualizationView.play(totalDuration: duration)
 			} catch {
 				self.showAlert(with: error)
 			}

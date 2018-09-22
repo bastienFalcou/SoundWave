@@ -146,33 +146,7 @@ public class AudioVisualizationView: BaseNibView {
 
     // PRAGMA: - Play Mode Handling
 
-    public func play(for duration: TimeInterval) {
-      
-
-        if let currentChronometer = self.playChronometer {
-            currentChronometer.start() // resume current
-            return
-        }
-
-        self.playChronometer = Chronometer(withTimeInterval: self.audioVisualizationTimeInterval)
-        self.playChronometer?.start(shouldFire: false)
-
-        self.playChronometer?.timerDidUpdate = { [weak self] timerDuration in
-            guard let this = self else {
-                return
-            }
-
-            if timerDuration >= duration {
-                this.stop()
-                return
-            }
-
-            this.currentGradientPercentage = Float(timerDuration) / Float(duration)
-            this.setNeedsDisplay()
-        }
-    }
-
-    public func play(from position: TimeInterval = 0, fromTotalDuration duration: TimeInterval) {
+    public func play(from position: TimeInterval = 0, totalDuration duration: TimeInterval) {
       
         guard self.audioVisualizationMode == .read else {
             fatalError("trying to read audio visualization in write mode")
