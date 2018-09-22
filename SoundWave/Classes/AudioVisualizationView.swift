@@ -147,13 +147,7 @@ public class AudioVisualizationView: BaseNibView {
     // PRAGMA: - Play Mode Handling
 
     public func play(for duration: TimeInterval) {
-        guard self.audioVisualizationMode == .read else {
-            fatalError("trying to read audio visualization in write mode")
-        }
-
-        guard self.meteringLevels != nil else {
-            fatalError("trying to read audio visualization of non initialized sound record")
-        }
+      
 
         if let currentChronometer = self.playChronometer {
             currentChronometer.start() // resume current
@@ -178,37 +172,40 @@ public class AudioVisualizationView: BaseNibView {
         }
     }
 
-    public func play(from position: TimeInterval, fromTotalDuration duration: TimeInterval, shouldContinuePlaying: Bool) {
-
+    public func play(from position: TimeInterval = 0, fromTotalDuration duration: TimeInterval) {
+      
+        guard self.audioVisualizationMode == .read else {
+          fatalError("trying to read audio visualization in write mode")
+        }
+      
+        guard self.meteringLevels != nil else {
+          fatalError("trying to read audio visualization of non initialized sound record")
+        }
+        
         self.currentGradientPercentage = Float(position) / Float(duration)
         self.setNeedsDisplay()
 
-        if let isPlaying = playChronometer?.isPlaying {
-            if isPlaying { pause() }
-        }
-
-        self.playChronometer?.timerCurrentValue = position
         if let currentChronometer = self.playChronometer {
+            currentChronometer.timerCurrentValue = position
             currentChronometer.start() // resume current
             return
         }
 
         self.playChronometer = Chronometer(withTimeInterval: self.audioVisualizationTimeInterval)
+        self.playChronometer?.timerCurrentValue = position
         self.playChronometer?.start(shouldFire: false)
-        if shouldContinuePlaying {
-            self.playChronometer?.timerDidUpdate = { [weak self] timerDuration in
-                guard let this = self else {
-                    return
-                }
-
-                if position >= duration {
-                    this.stop()
-                    return
-                }
-
-                this.currentGradientPercentage = Float(position) / Float(duration)
-                this.setNeedsDisplay()
+        self.playChronometer?.timerDidUpdate = { [weak self] timerDuration in
+            guard let this = self else {
+                return
             }
+
+            if timerDuration >= duration {
+                this.stop()
+                return
+            }
+
+            this.currentGradientPercentage = Float(timerDuration) / Float(duration)
+            this.setNeedsDisplay()
         }
     }
 
