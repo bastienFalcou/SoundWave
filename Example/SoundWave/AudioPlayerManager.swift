@@ -25,7 +25,7 @@ final class AudioPlayerManager: NSObject {
 
 	// MARK: - Reinit and play from the beginning
 
-	func play(at url: URL, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
+	func play(at url: URL, atTimePercentage: Float, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
 		if AudioRecorderManager.shared.isRunning {
 			print("Audio Player did fail to start: AVFoundation is recording")
 			throw AudioErrorType.alreadyRecording
@@ -42,22 +42,27 @@ final class AudioPlayerManager: NSObject {
 		}
 
 		try self.audioPlayer = AVAudioPlayer(contentsOf: url)
-		self.setupPlayer(with: audioVisualizationTimeInterval)
+    let duration = self.audioPlayer!.duration
+    let normalizedFromValue = Float(duration) * atTimePercentage
+    self.setupPlayer(atTime: TimeInterval(normalizedFromValue), with: audioVisualizationTimeInterval)
 		print("Started to play sound")
 
-		return self.audioPlayer!.duration
+		return duration
 	}
 
-	func play(_ data: Data, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
+  func play(_ data: Data, atTimePercentage: Float, with audioVisualizationTimeInterval: TimeInterval = 0.05) throws -> TimeInterval {
 		try self.audioPlayer = AVAudioPlayer(data: data)
-		self.setupPlayer(with: audioVisualizationTimeInterval)
+    let duration = self.audioPlayer!.duration
+    let normalizedFromValue = Float(duration) * atTimePercentage
+    self.setupPlayer(atTime: TimeInterval(normalizedFromValue), with: audioVisualizationTimeInterval)
 		print("Started to play sound")
 
-		return self.audioPlayer!.duration
+		return duration
 	}
 	
-	private func setupPlayer(with audioVisualizationTimeInterval: TimeInterval) {
+  private func setupPlayer(atTime: TimeInterval, with audioVisualizationTimeInterval: TimeInterval) {
 		if let player = self.audioPlayer {
+      player.currentTime = atTime
 			player.play()
 			player.isMeteringEnabled = true
 			player.delegate = self

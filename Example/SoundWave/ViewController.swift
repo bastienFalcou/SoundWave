@@ -59,11 +59,13 @@ class ViewController: UIViewController {
 	}
 	
 	private var chronometer: Chronometer?
-	
+  
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		self.viewModel.askAudioRecordingPermission()
+    
+    self.audioVisualizationView.touchesDelegate = self
+
+    self.viewModel.askAudioRecordingPermission()
 		
 		self.viewModel.audioMeteringLevelUpdate = { [weak self] meteringLevel in
 			guard let this = self, this.audioVisualizationView.audioVisualizationMode == .write else {
@@ -112,15 +114,24 @@ class ViewController: UIViewController {
 				self.currentState = .ready
 				self.showAlert(with: error)
 			}
-		case .recorded, .paused:
+		case .recorded:
 			do {
 				let duration = try self.viewModel.startPlaying()
 				self.currentState = .playing
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
-				self.audioVisualizationView.play(for: duration)
+                self.audioVisualizationView.play(totalDuration: duration)
 			} catch {
 				self.showAlert(with: error)
 			}
+        case .paused:
+            do {
+                _ = try self.viewModel.startPlaying()
+                self.currentState = .playing
+                self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
+                self.audioVisualizationView.resume()
+            } catch {
+                self.showAlert(with: error)
+            }
 		case .playing:
 			do {
 				try self.viewModel.pausePlaying()
@@ -183,4 +194,45 @@ class ViewController: UIViewController {
 			self.view.layoutIfNeeded()
 		}
 	}
+}
+
+extension ViewController: AudioVizualitzationViewTouchesDelegate {
+  
+    func touchesBegan(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?) {
+      handleTouches(touches)
+    }
+  
+    func touchesMoved(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+  
+    func touchesEnded(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+  
+    func touchesCancelled(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?) {
+    }
+  
+    private func handleTouches(_ touches: Set<UITouch>) {
+      guard let firstTouch = touches.randomElement() else {
+        return
+      }
+      
+      let currentPoint = firstTouch.location(in: self.audioVisualizationView)
+      switch self.currentState {
+      case .recorded:
+        do {
+          self.currentState = .playing
+          let duration = try self.viewModel.startPlaying(atTimePercentage: Float(currentPoint.x / self.audioVisualizationView.frame.width))
+          self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
+          
+          let normalizedFromValue = CGFloat(duration) * (currentPoint.x / self.audioVisualizationView.frame.width)
+
+          self.audioVisualizationView.play(from: TimeInterval(normalizedFromValue), totalDuration: duration)
+        } catch {
+          self.showAlert(with: error)
+        }
+      default:
+        break
+      }
+    }
+  
 }

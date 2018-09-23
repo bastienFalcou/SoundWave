@@ -67,7 +67,7 @@ final class ViewModel {
 	
 	// MARK: - Playing
 	
-	func startPlaying() throws -> TimeInterval {
+  func startPlaying(atTimePercentage: Float = 0) throws -> TimeInterval {
 		guard let currentAudioRecord = self.currentAudioRecord else {
 			throw AudioErrorType.audioFileWrongPath
 		}
@@ -80,7 +80,7 @@ final class ViewModel {
 			}
 			
 			self.isPlaying = true
-			return try AudioPlayerManager.shared.play(at: audioFilePath, with: self.audioVisualizationTimeInterval)
+      return try AudioPlayerManager.shared.play(at: audioFilePath, atTimePercentage: atTimePercentage, with: self.audioVisualizationTimeInterval)
 		}
 	}
 	
