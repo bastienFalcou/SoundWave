@@ -7,12 +7,24 @@
 
 import UIKit
 
+public protocol AudioVizualitzationViewTouchesDelegate: class {
+  
+    func touchesBegan(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?)
+  
+    func touchesMoved(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?)
+  
+    func touchesEnded(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?)
+  
+    func touchesCancelled(on view: AudioVisualizationView, _ touches: Set<UITouch>, with event: UIEvent?)
+
+}
+
 public class AudioVisualizationView: BaseNibView {
     public enum AudioVisualizationMode {
         case read
         case write
     }
-
+  
     @IBInspectable public var meteringLevelBarWidth: CGFloat = 3.0 {
         didSet {
             self.setNeedsDisplay()
@@ -28,6 +40,8 @@ public class AudioVisualizationView: BaseNibView {
             self.setNeedsDisplay()
         }
     }
+  
+    public weak var touchesDelegate: AudioVizualitzationViewTouchesDelegate?
 
     public var audioVisualizationMode: AudioVisualizationMode = .read
 
@@ -238,6 +252,24 @@ public class AudioVisualizationView: BaseNibView {
         self.currentGradientPercentage = 1.0
         self.setNeedsDisplay()
         self.currentGradientPercentage = nil
+    }
+  
+    // MARK : - Touches
+  
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchesDelegate?.touchesBegan(on: self, touches, with: event)
+    }
+  
+    public override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchesDelegate?.touchesMoved(on: self, touches, with: event)
+    }
+  
+    public override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchesDelegate?.touchesEnded(on: self, touches, with: event)
+    }
+  
+    public override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.touchesDelegate?.touchesCancelled(on: self, touches, with: event)
     }
 
     // MARK: - Mask + Gradient
