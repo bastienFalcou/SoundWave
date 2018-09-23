@@ -209,6 +209,13 @@ public class AudioVisualizationView: BaseNibView {
         }
         self.playChronometer?.pause()
     }
+  
+    public func resume() {
+        guard let chronometer = self.playChronometer, !chronometer.isPlaying else {
+          return
+        }
+        chronometer.start()
+    }
 
     public func stop() {
         self.playChronometer?.stop()

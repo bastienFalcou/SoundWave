@@ -112,15 +112,24 @@ class ViewController: UIViewController {
 				self.currentState = .ready
 				self.showAlert(with: error)
 			}
-		case .recorded, .paused:
+		case .recorded:
 			do {
 				let duration = try self.viewModel.startPlaying()
 				self.currentState = .playing
 				self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
-				self.audioVisualizationView.play(totalDuration: duration)
+                self.audioVisualizationView.play(totalDuration: duration)
 			} catch {
 				self.showAlert(with: error)
 			}
+        case .paused:
+            do {
+                _ = try self.viewModel.startPlaying()
+                self.currentState = .playing
+                self.audioVisualizationView.meteringLevels = self.viewModel.currentAudioRecord!.meteringLevels
+                self.audioVisualizationView.resume()
+            } catch {
+                self.showAlert(with: error)
+            }
 		case .playing:
 			do {
 				try self.viewModel.pausePlaying()
