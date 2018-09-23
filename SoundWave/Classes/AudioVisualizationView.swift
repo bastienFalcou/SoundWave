@@ -198,9 +198,23 @@ public class AudioVisualizationView: BaseNibView {
         }
       
         currentChronometer.timerCurrentValue = position
-
+      
         self.currentGradientPercentage = Float(position) / Float(duration)
         self.setNeedsDisplay()
+      
+        currentChronometer.timerDidUpdate = { [weak self] timerDuration in
+            guard let this = self else {
+                return
+            }
+          
+            if timerDuration >= duration {
+                this.stop()
+                return
+            }
+          
+            this.currentGradientPercentage = Float(timerDuration) / Float(duration)
+            this.setNeedsDisplay()
+        }
     }
 
     public func pause() {
