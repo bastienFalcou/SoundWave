@@ -186,7 +186,7 @@ public class AudioVisualizationView: BaseNibView {
     public func move(to position: TimeInterval, fromTotalDuration duration: TimeInterval) {
       
         guard let currentChronometer = self.playChronometer else {
-            return
+            fatalError("trying to move audio vizualization when it has not been started")
         }
       
         guard self.audioVisualizationMode == .read else {
@@ -212,7 +212,7 @@ public class AudioVisualizationView: BaseNibView {
   
     public func resume() {
         guard let chronometer = self.playChronometer, !chronometer.isPlaying else {
-          return
+            fatalError("trying to resume audio visualization view when is already playing")
         }
         chronometer.start()
     }
