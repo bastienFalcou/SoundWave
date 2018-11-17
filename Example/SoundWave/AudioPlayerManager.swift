@@ -5,7 +5,6 @@
 //  Created by Bastien Falcou on 4/14/16.
 //  Copyright © 2016 Fueled. All rights reserved.
 //
-// swiftlint:disable indentation_character
 
 import Foundation
 import AVFoundation
