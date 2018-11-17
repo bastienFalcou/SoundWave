@@ -8,7 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SoundWave'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
+  s.swift_version    = '4.2'
   s.summary          = 'Illustrate your SoundWave on the fly 🚀'
   s.homepage         = 'https://github.com/bastienFalcou/SoundWave'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -23,7 +24,7 @@ Pod::Spec.new do |s|
     - Customize background, gradient start and end colors, metering level bar properties, etc.
                        DESC
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.source_files = 'SoundWave/Classes/**/*'
   
   # s.resource_bundles = {
