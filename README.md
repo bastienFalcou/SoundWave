@@ -3,7 +3,7 @@
 [![CI Status](http://img.shields.io/travis/bastienFalcou/SoundWave.svg?style=flat)](https://travis-ci.org/bastienFalcou/SoundWave)
 [![Version](https://img.shields.io/cocoapods/v/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-![Swift 4.0.x](https://img.shields.io/badge/Swift-4.0.x-orange.svg)
+![Swift 4.2.x](https://img.shields.io/badge/Swift-4.2.x-orange.svg)
 [![License](https://img.shields.io/cocoapods/l/SoundWave.svg?style=flat)](http://cocoapods.org/pods/SoundWave)
 
 SoundWave is a customizable view representing sounds over time.
@@ -16,9 +16,9 @@ SoundWave is a customizable view representing sounds over time.
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 9.0+
-- Swift 4.0+
+- iOS 10.0+
+- Xcode 10.0+
+- Swift 4.2+
 
 ## Installation
 
@@ -76,11 +76,11 @@ self.audioVisualizationView.meteringLevelBarCornerRadius = 0.0
 You can change grandient start and end color:
 
 ```swift
-self.audioVisualizationView.gradientStartColor = UIColor.white
-self.audioVisualizationView.gradientEndColor = UIColor.black
+self.audioVisualizationView.gradientStartColor = .white
+self.audioVisualizationView.gradientEndColor = .black
 ```
 
-> Those variables declared as `IBInspectable` can be set from Interface Builder.
+> Those variables declared as `IBInspectable` can also be set from Interface Builder.
 
 ### Display sound metering levels on the fly
 
@@ -97,7 +97,7 @@ Your graph representing metering levels will (re)draw every time you pass a new 
 The value needs to be **between 0 and 1**.
 
 ```swift
-self.audioVisualizationView.addMeteringLevel(0.6)
+self.audioVisualizationView.add(meteringLevel: 0.6)
 ```
 
 > You need to calculate a **percentage** of your decibel values, based on **minimum** and **maximum decibel number** of your recording system. 
