@@ -75,8 +75,8 @@ final class AudioRecorderManager: NSObject {
 			print("Incorrect path for new audio file")
 			throw AudioErrorType.audioFileWrongPath
 		}
-		
-		try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayAndRecord, with:.defaultToSpeaker)
+
+        try AVAudioSession.sharedInstance().setCategory(.playAndRecord, mode: .default, options: .defaultToSpeaker)
 		try AVAudioSession.sharedInstance().setActive(true)
 		
 		self.recorder = try AVAudioRecorder(url: path, settings: recordSettings)

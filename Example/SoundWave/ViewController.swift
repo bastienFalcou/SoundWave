@@ -52,7 +52,7 @@ class ViewController: UIViewController {
 
 	var currentState: AudioRecodingState = .ready {
 		didSet {
-			self.recordButton.setImage(self.currentState.buttonImage, for: UIControlState())
+            self.recordButton.setImage(self.currentState.buttonImage, for: UIControl.State())
 			self.audioVisualizationView.audioVisualizationMode = self.currentState.audioVisualizationMode
 			self.clearButton.isHidden = self.currentState == .ready || self.currentState == .playing || self.currentState == .recording
 		}
