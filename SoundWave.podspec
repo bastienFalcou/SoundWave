@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.ios.deployment_target = '10.0'
-  s.source_files = 'SoundWave/Classes/**/*'
+  s.source_files = 'SoundWave/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'SoundWave' => ['SoundWave/Assets/*.png']

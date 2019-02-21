@@ -7,285 +7,302 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1EEC775DDE5F2A37C0E0F86E43C7B31A /* AudioVisualizationView.xib in Sources */ = {isa = PBXBuildFile; fileRef = 4B9AB804855DFF6F63E899C303604C9A /* AudioVisualizationView.xib */; };
-		2A35353E06BB872ACBF26C8680B0BA4E /* SoundWave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E519711B6681A87FBABF783F4A725536 /* SoundWave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		34C70E8FDFAF0339D07F9976260E9492 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		3F15851043E4446EC302DA34C6F55047 /* Pods-SoundWave_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EEDEC335A68D94846DBEBCAC9F561D22 /* Pods-SoundWave_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		455AA26188E2B36BF5843EF8154D018D /* SoundWave-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BB0C6EF46B0B50CB8F39AE64F2B380 /* SoundWave-dummy.m */; };
-		4BFC4A612E184529CF12FFB1FBE6B567 /* Pods-SoundWave_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 881DD52978C1005987446578AE13C84C /* Pods-SoundWave_Tests-dummy.m */; };
-		4D5248AC16C27A9CF57898907A831AAA /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E475EBE8FEF599C6B471EAE1015BE9 /* AudioVisualizationView.swift */; };
-		50261C445A41308F15ACA65D9BF144BC /* Pods-SoundWave_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D6877F59FE267B03046851DDF01C8348 /* Pods-SoundWave_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DF11500B496861E614056AB53148AB1 /* Pods-SoundWave_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E36D50547D754350DA57944A59BC1BD /* Pods-SoundWave_Example-dummy.m */; };
-		92C45EC4DF781ED38F9671C1AE187DC7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		B0D6DED9724AB1C003AD17FCD4C140DC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		BB315AD5647B65A817ACB404A2AA12C2 /* Chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA2796776B9FB761C23F5FE75009001 /* Chronometer.swift */; };
-		EE42F2D0E643548C479E9E196044AB41 /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB611EEF47408A3D166857042B88B71A /* BaseNibView.swift */; };
+		0E4F148F7A5877FF62AF22C7BF90AF82 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3CB4688A5BEDA3EEED64556A7ABCB /* AudioVisualizationView.swift */; };
+		10CFD2BAD408245F95767D475E8CE956 /* SoundWave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90971F2E3C6A2BB4EE25F0E1BC8FE3A3 /* SoundWave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28B825EA1FCFB42A5F3F3A06AF511349 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		2BD5B735D84BD0983BC75B3E1AD086E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		330D63421D7BE440B0F25FE57A9053EA /* Pods-SoundWave_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 683603895C0AEA712647D8024201B158 /* Pods-SoundWave_Example-dummy.m */; };
+		40FA48F06DD123C3ACC84517B2BAA7B0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		7643532D22E5499A92D4833042FABEAE /* SoundWave-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 625ADF9992F295A97D684B52F320D880 /* SoundWave-dummy.m */; };
+		772D6C4731704EBA40EA944E5CDA5BDD /* Pods-SoundWave_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD8F10A321336F2AA9DB38B012A48 /* Pods-SoundWave_Tests-dummy.m */; };
+		8925C6C1E32B2A7333E5C0CB6F43F995 /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B858444A069069EB6DFB3C74185B8F2F /* BaseNibView.swift */; };
+		B035AB79A844DC88FE491187B5E4396F /* Chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3DB461EEBACAD078C41C567B5F4938 /* Chronometer.swift */; };
+		D36F5BBBC7EB8D6BB517FF9AAD7780E2 /* Pods-SoundWave_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0431AAC03870CD0FF1B6B597A8672A48 /* Pods-SoundWave_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBFDD2E1C87406ABF0B968853EB5A448 /* Pods-SoundWave_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F0428B7D92523063021A33240CBD29 /* Pods-SoundWave_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		78D675D5D9BC79144F990F92289D239F /* PBXContainerItemProxy */ = {
+		88A3603815A7E530042075E193114E60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DA0E0DA783D455D06CF45FA469F380CD;
+			remoteGlobalIDString = 5562A7AD50BFF09D4F9C2F077AC6585C;
+			remoteInfo = "Pods-SoundWave_Example";
+		};
+		BC5DA26B1FF3733D24C1629B2FCE7C1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B02988A03122B7116D9EB7EB3C26C39A;
 			remoteInfo = SoundWave;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0869466109ECC86C0480FAEE068965EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		252C9420CC36096860FB7495F8C19010 /* SoundWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SoundWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BE3629AA5E2A3A7C97440C013467E2F /* Pods-SoundWave_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		2E36D50547D754350DA57944A59BC1BD /* Pods-SoundWave_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundWave_Example-dummy.m"; sourceTree = "<group>"; };
-		38D6BB2F95999746377EEF76B1E42100 /* SoundWave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SoundWave.modulemap; sourceTree = "<group>"; };
-		3E99A7AFB2FC13189CEE02A5E9204F53 /* Pods-SoundWave_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundWave_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		431657B6E6F7A5EBDAEBD31549482DD3 /* Pods-SoundWave_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundWave_Example-frameworks.sh"; sourceTree = "<group>"; };
-		49F603A4270F67670BB66696486F5B02 /* Pods_SoundWave_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundWave_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SoundWave.xcconfig; sourceTree = "<group>"; };
-		4B9AB804855DFF6F63E899C303604C9A /* AudioVisualizationView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = AudioVisualizationView.xib; sourceTree = "<group>"; };
-		557FB35657EE84C684F44131FA3D464A /* Pods-SoundWave_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		6039F2E3158F1A97D5029AA2449385C7 /* SoundWave-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundWave-prefix.pch"; sourceTree = "<group>"; };
-		6B306E77B3197264457ABFDACACC8CB5 /* Pods-SoundWave_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SoundWave_Tests.modulemap"; sourceTree = "<group>"; };
-		71E475EBE8FEF599C6B471EAE1015BE9 /* AudioVisualizationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AudioVisualizationView.swift; sourceTree = "<group>"; };
-		7C3EBF1A6D0AF3972BB0836B6473982C /* Pods-SoundWave_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		84D525E9FCD0D546DD98BD54B7FFF582 /* Pods-SoundWave_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SoundWave_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		881DD52978C1005987446578AE13C84C /* Pods-SoundWave_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundWave_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9B458B1503E7F72122EF888A8A7B12FE /* Pods_SoundWave_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundWave_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14BCFBCEFF74B0CE639A30EECCD96E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A61D45C4866A09EC6AFF0D2CDB9A2F9E /* Pods-SoundWave_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B168FBFA2420FB581A5566CA9B989828 /* Pods-SoundWave_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		B9F2F84D6541D3298C52501B171E5D90 /* Pods-SoundWave_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundWave_Example-resources.sh"; sourceTree = "<group>"; };
-		BBA2796776B9FB761C23F5FE75009001 /* Chronometer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Chronometer.swift; sourceTree = "<group>"; };
-		C2BB0C6EF46B0B50CB8F39AE64F2B380 /* SoundWave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SoundWave-dummy.m"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CDFE655E851F124959641A3DC6AAC933 /* Pods-SoundWave_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SoundWave_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		D6877F59FE267B03046851DDF01C8348 /* Pods-SoundWave_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundWave_Tests-umbrella.h"; sourceTree = "<group>"; };
-		D94BD439453168B931E9A205991A242F /* Pods-SoundWave_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SoundWave_Example.modulemap"; sourceTree = "<group>"; };
-		E519711B6681A87FBABF783F4A725536 /* SoundWave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundWave-umbrella.h"; sourceTree = "<group>"; };
-		E8C5857EA17DF58CB26165413F31A4DA /* Pods-SoundWave_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EAEC50BE60479BF782A206F6912B2BE8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDEC335A68D94846DBEBCAC9F561D22 /* Pods-SoundWave_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundWave_Example-umbrella.h"; sourceTree = "<group>"; };
-		F562D7539CE8318A6AD9A7D724514B1D /* Pods-SoundWave_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundWave_Tests-resources.sh"; sourceTree = "<group>"; };
-		FB611EEF47408A3D166857042B88B71A /* BaseNibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = BaseNibView.swift; sourceTree = "<group>"; };
+		0431AAC03870CD0FF1B6B597A8672A48 /* Pods-SoundWave_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundWave_Example-umbrella.h"; sourceTree = "<group>"; };
+		0958323327EB40E9F6FD0CC29FEED5E4 /* Pods-SoundWave_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SoundWave_Example.modulemap"; sourceTree = "<group>"; };
+		123E6352DA5282A14037FB4F678EE382 /* Pods-SoundWave_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		171F70B5277D8C9559D7E813CA5F3E3E /* SoundWave.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SoundWave.xcconfig; sourceTree = "<group>"; };
+		23EF6C7F30D8C5B8D6384C4DFDF0BA77 /* SoundWave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SoundWave.modulemap; sourceTree = "<group>"; };
+		2A04281E755CDFAA6E457F5DF0F129A3 /* Pods-SoundWave_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.release.xcconfig"; sourceTree = "<group>"; };
+		2A3DB461EEBACAD078C41C567B5F4938 /* Chronometer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Chronometer.swift; path = SoundWave/Classes/Chronometer.swift; sourceTree = "<group>"; };
+		3036B7A62C190BF0A52AC90B12F24A23 /* Pods-SoundWave_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		325E3152A29DA61EE2F2C952AF012881 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4CF2C42D7579BDBF627D18C890E33D99 /* Pods-SoundWave_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		592DD7CB9ADC5C0E34FD3E8FD19CCE10 /* Pods-SoundWave_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SoundWave_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5DAE4FDD3581C35D738D99B8BD194A0F /* Pods_SoundWave_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SoundWave_Example.framework; path = "Pods-SoundWave_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		625ADF9992F295A97D684B52F320D880 /* SoundWave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SoundWave-dummy.m"; sourceTree = "<group>"; };
+		683603895C0AEA712647D8024201B158 /* Pods-SoundWave_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundWave_Example-dummy.m"; sourceTree = "<group>"; };
+		8540DE25B899AD6B2942F5CA9FABEA8F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		90971F2E3C6A2BB4EE25F0E1BC8FE3A3 /* SoundWave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundWave-umbrella.h"; sourceTree = "<group>"; };
+		9400672BADC8722EC753AAFF28B265DC /* Pods-SoundWave_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Tests-Info.plist"; sourceTree = "<group>"; };
+		95EF8459E1CE6208CB04489249E770D2 /* Pods-SoundWave_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		9C29C2047651EDA9A7A917198244637B /* Pods_SoundWave_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SoundWave_Tests.framework; path = "Pods-SoundWave_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A53AFFB264886AD7F16756A330B8EA6B /* Pods-SoundWave_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SoundWave_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A608E7EB1722D8E40ACB767A397E607D /* Pods-SoundWave_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SoundWave_Tests.modulemap"; sourceTree = "<group>"; };
+		A9F0428B7D92523063021A33240CBD29 /* Pods-SoundWave_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundWave_Tests-umbrella.h"; sourceTree = "<group>"; };
+		B858444A069069EB6DFB3C74185B8F2F /* BaseNibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseNibView.swift; path = SoundWave/Classes/BaseNibView.swift; sourceTree = "<group>"; };
+		BCDBDED1CB98D5645913DD5D60259EE7 /* Pods-SoundWave_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SoundWave_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C020506C18537F30846054DC73BC4A5A /* SoundWave-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SoundWave-Info.plist"; sourceTree = "<group>"; };
+		C710E24F0B3B9A6AC4C8383DC2C5D006 /* Pods-SoundWave_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		C76BB6F726752D54A7DFE0415E2188D3 /* Pods-SoundWave_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Example-Info.plist"; sourceTree = "<group>"; };
+		C8F723CB3C488055BEED95A6B9ED5666 /* SoundWave.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SoundWave.framework; path = SoundWave.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		CEF3CB4688A5BEDA3EEED64556A7ABCB /* AudioVisualizationView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AudioVisualizationView.swift; path = SoundWave/Classes/AudioVisualizationView.swift; sourceTree = "<group>"; };
+		D8CDD8F10A321336F2AA9DB38B012A48 /* Pods-SoundWave_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SoundWave_Tests-dummy.m"; sourceTree = "<group>"; };
+		F97A0192EF539243D106B366B6E25E31 /* SoundWave-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundWave-prefix.pch"; sourceTree = "<group>"; };
+		FE9F3670133AEA4DD9E5E6478526FF59 /* SoundWave.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SoundWave.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6E6EA9749E92FD4C480BBC4E90146705 /* Frameworks */ = {
+		0F0DC5F871985C2530D2C20195752380 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0D6DED9724AB1C003AD17FCD4C140DC /* Foundation.framework in Frameworks */,
+				40FA48F06DD123C3ACC84517B2BAA7B0 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		74E5C2CBC541BE6797F6A29DB26D7CDB /* Frameworks */ = {
+		37DB80BB7C5B09898FBB8309D4E30D35 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				92C45EC4DF781ED38F9671C1AE187DC7 /* Foundation.framework in Frameworks */,
+				2BD5B735D84BD0983BC75B3E1AD086E9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5436CF00162CA1127B234A7F8306161 /* Frameworks */ = {
+		DB697951E25533A8731D78682D7E5C2A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34C70E8FDFAF0339D07F9976260E9492 /* Foundation.framework in Frameworks */,
+				28B825EA1FCFB42A5F3F3A06AF511349 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		129FA988AFDAFB40CAF0E43D2ED7E9CE /* SoundWave */ = {
+		1FD32F54A00CACD9E8148E41603F1490 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				FCBC0AD3BF48F45EF8BB99BA9E4D45B4 /* Classes */,
+				8540DE25B899AD6B2942F5CA9FABEA8F /* LICENSE */,
+				325E3152A29DA61EE2F2C952AF012881 /* README.md */,
+				FE9F3670133AEA4DD9E5E6478526FF59 /* SoundWave.podspec */,
 			);
-			path = SoundWave;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		1D6C8A005BF8BA0ED078B877BF604BA6 /* Pods-SoundWave_Example */ = {
+		2DB9548963B6381190CA37CB50684D2F /* SoundWave */ = {
 			isa = PBXGroup;
 			children = (
-				EAEC50BE60479BF782A206F6912B2BE8 /* Info.plist */,
-				D94BD439453168B931E9A205991A242F /* Pods-SoundWave_Example.modulemap */,
-				84D525E9FCD0D546DD98BD54B7FFF582 /* Pods-SoundWave_Example-acknowledgements.markdown */,
-				A61D45C4866A09EC6AFF0D2CDB9A2F9E /* Pods-SoundWave_Example-acknowledgements.plist */,
-				2E36D50547D754350DA57944A59BC1BD /* Pods-SoundWave_Example-dummy.m */,
-				431657B6E6F7A5EBDAEBD31549482DD3 /* Pods-SoundWave_Example-frameworks.sh */,
-				B9F2F84D6541D3298C52501B171E5D90 /* Pods-SoundWave_Example-resources.sh */,
-				EEDEC335A68D94846DBEBCAC9F561D22 /* Pods-SoundWave_Example-umbrella.h */,
-				7C3EBF1A6D0AF3972BB0836B6473982C /* Pods-SoundWave_Example.debug.xcconfig */,
-				E8C5857EA17DF58CB26165413F31A4DA /* Pods-SoundWave_Example.release.xcconfig */,
-			);
-			name = "Pods-SoundWave_Example";
-			path = "Target Support Files/Pods-SoundWave_Example";
-			sourceTree = "<group>";
-		};
-		54D6B86C708A6E3E4B91CA58BBD68C96 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				A14BCFBCEFF74B0CE639A30EECCD96E2 /* Info.plist */,
-				38D6BB2F95999746377EEF76B1E42100 /* SoundWave.modulemap */,
-				4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */,
-				C2BB0C6EF46B0B50CB8F39AE64F2B380 /* SoundWave-dummy.m */,
-				6039F2E3158F1A97D5029AA2449385C7 /* SoundWave-prefix.pch */,
-				E519711B6681A87FBABF783F4A725536 /* SoundWave-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SoundWave";
-			sourceTree = "<group>";
-		};
-		5A2E4EFD11A401E5218694D0BD4ECCE4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				49F603A4270F67670BB66696486F5B02 /* Pods_SoundWave_Example.framework */,
-				9B458B1503E7F72122EF888A8A7B12FE /* Pods_SoundWave_Tests.framework */,
-				252C9420CC36096860FB7495F8C19010 /* SoundWave.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		798677AF1DCB827A3695543D049C8C95 /* Pods-SoundWave_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				0869466109ECC86C0480FAEE068965EA /* Info.plist */,
-				6B306E77B3197264457ABFDACACC8CB5 /* Pods-SoundWave_Tests.modulemap */,
-				CDFE655E851F124959641A3DC6AAC933 /* Pods-SoundWave_Tests-acknowledgements.markdown */,
-				2BE3629AA5E2A3A7C97440C013467E2F /* Pods-SoundWave_Tests-acknowledgements.plist */,
-				881DD52978C1005987446578AE13C84C /* Pods-SoundWave_Tests-dummy.m */,
-				3E99A7AFB2FC13189CEE02A5E9204F53 /* Pods-SoundWave_Tests-frameworks.sh */,
-				F562D7539CE8318A6AD9A7D724514B1D /* Pods-SoundWave_Tests-resources.sh */,
-				D6877F59FE267B03046851DDF01C8348 /* Pods-SoundWave_Tests-umbrella.h */,
-				557FB35657EE84C684F44131FA3D464A /* Pods-SoundWave_Tests.debug.xcconfig */,
-				B168FBFA2420FB581A5566CA9B989828 /* Pods-SoundWave_Tests.release.xcconfig */,
-			);
-			name = "Pods-SoundWave_Tests";
-			path = "Target Support Files/Pods-SoundWave_Tests";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				DDF4E80CE1E87FB3BFDC25C06C5CBE0E /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				5A2E4EFD11A401E5218694D0BD4ECCE4 /* Products */,
-				8C3EA9E90690DE4592F1941451DB3C26 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		8C3EA9E90690DE4592F1941451DB3C26 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1D6C8A005BF8BA0ED078B877BF604BA6 /* Pods-SoundWave_Example */,
-				798677AF1DCB827A3695543D049C8C95 /* Pods-SoundWave_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		929E7FB1CB355BD99412A6E77AA20782 /* SoundWave */ = {
-			isa = PBXGroup;
-			children = (
-				129FA988AFDAFB40CAF0E43D2ED7E9CE /* SoundWave */,
-				54D6B86C708A6E3E4B91CA58BBD68C96 /* Support Files */,
+				CEF3CB4688A5BEDA3EEED64556A7ABCB /* AudioVisualizationView.swift */,
+				B858444A069069EB6DFB3C74185B8F2F /* BaseNibView.swift */,
+				2A3DB461EEBACAD078C41C567B5F4938 /* Chronometer.swift */,
+				1FD32F54A00CACD9E8148E41603F1490 /* Pod */,
+				4CDF8FA69AFCC8B307BD991C3F1FD8C2 /* Support Files */,
 			);
 			name = SoundWave;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		30E92DF8B7C75461CBDF839C3D97701E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				DEACBDE365AE2E6A4ADD2275FF06E014 /* Pods-SoundWave_Example */,
+				644C54E8CA26F5019297F57432D46E91 /* Pods-SoundWave_Tests */,
 			);
-			name = Frameworks;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		DDF4E80CE1E87FB3BFDC25C06C5CBE0E /* Development Pods */ = {
+		4CDF8FA69AFCC8B307BD991C3F1FD8C2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				929E7FB1CB355BD99412A6E77AA20782 /* SoundWave */,
+				23EF6C7F30D8C5B8D6384C4DFDF0BA77 /* SoundWave.modulemap */,
+				171F70B5277D8C9559D7E813CA5F3E3E /* SoundWave.xcconfig */,
+				625ADF9992F295A97D684B52F320D880 /* SoundWave-dummy.m */,
+				C020506C18537F30846054DC73BC4A5A /* SoundWave-Info.plist */,
+				F97A0192EF539243D106B366B6E25E31 /* SoundWave-prefix.pch */,
+				90971F2E3C6A2BB4EE25F0E1BC8FE3A3 /* SoundWave-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SoundWave";
+			sourceTree = "<group>";
+		};
+		644C54E8CA26F5019297F57432D46E91 /* Pods-SoundWave_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A608E7EB1722D8E40ACB767A397E607D /* Pods-SoundWave_Tests.modulemap */,
+				A53AFFB264886AD7F16756A330B8EA6B /* Pods-SoundWave_Tests-acknowledgements.markdown */,
+				3036B7A62C190BF0A52AC90B12F24A23 /* Pods-SoundWave_Tests-acknowledgements.plist */,
+				D8CDD8F10A321336F2AA9DB38B012A48 /* Pods-SoundWave_Tests-dummy.m */,
+				9400672BADC8722EC753AAFF28B265DC /* Pods-SoundWave_Tests-Info.plist */,
+				A9F0428B7D92523063021A33240CBD29 /* Pods-SoundWave_Tests-umbrella.h */,
+				4CF2C42D7579BDBF627D18C890E33D99 /* Pods-SoundWave_Tests.debug.xcconfig */,
+				95EF8459E1CE6208CB04489249E770D2 /* Pods-SoundWave_Tests.release.xcconfig */,
+			);
+			name = "Pods-SoundWave_Tests";
+			path = "Target Support Files/Pods-SoundWave_Tests";
+			sourceTree = "<group>";
+		};
+		7E162DBEEA4844EE5D0A293E545094F4 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DB9548963B6381190CA37CB50684D2F /* SoundWave */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		FCBC0AD3BF48F45EF8BB99BA9E4D45B4 /* Classes */ = {
+		8E63BC80E1910EFE20F854557F583DF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71E475EBE8FEF599C6B471EAE1015BE9 /* AudioVisualizationView.swift */,
-				4B9AB804855DFF6F63E899C303604C9A /* AudioVisualizationView.xib */,
-				FB611EEF47408A3D166857042B88B71A /* BaseNibView.swift */,
-				BBA2796776B9FB761C23F5FE75009001 /* Chronometer.swift */,
+				5DAE4FDD3581C35D738D99B8BD194A0F /* Pods_SoundWave_Example.framework */,
+				9C29C2047651EDA9A7A917198244637B /* Pods_SoundWave_Tests.framework */,
+				C8F723CB3C488055BEED95A6B9ED5666 /* SoundWave.framework */,
 			);
-			path = Classes;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				7E162DBEEA4844EE5D0A293E545094F4 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				8E63BC80E1910EFE20F854557F583DF8 /* Products */,
+				30E92DF8B7C75461CBDF839C3D97701E /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEACBDE365AE2E6A4ADD2275FF06E014 /* Pods-SoundWave_Example */ = {
+			isa = PBXGroup;
+			children = (
+				0958323327EB40E9F6FD0CC29FEED5E4 /* Pods-SoundWave_Example.modulemap */,
+				592DD7CB9ADC5C0E34FD3E8FD19CCE10 /* Pods-SoundWave_Example-acknowledgements.markdown */,
+				C710E24F0B3B9A6AC4C8383DC2C5D006 /* Pods-SoundWave_Example-acknowledgements.plist */,
+				683603895C0AEA712647D8024201B158 /* Pods-SoundWave_Example-dummy.m */,
+				BCDBDED1CB98D5645913DD5D60259EE7 /* Pods-SoundWave_Example-frameworks.sh */,
+				C76BB6F726752D54A7DFE0415E2188D3 /* Pods-SoundWave_Example-Info.plist */,
+				0431AAC03870CD0FF1B6B597A8672A48 /* Pods-SoundWave_Example-umbrella.h */,
+				123E6352DA5282A14037FB4F678EE382 /* Pods-SoundWave_Example.debug.xcconfig */,
+				2A04281E755CDFAA6E457F5DF0F129A3 /* Pods-SoundWave_Example.release.xcconfig */,
+			);
+			name = "Pods-SoundWave_Example";
+			path = "Target Support Files/Pods-SoundWave_Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		382424384A70397DE68F81B91338AD92 /* Headers */ = {
+		5128652E7292E404F9BC2E6D5BB81C17 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50261C445A41308F15ACA65D9BF144BC /* Pods-SoundWave_Tests-umbrella.h in Headers */,
+				D36F5BBBC7EB8D6BB517FF9AAD7780E2 /* Pods-SoundWave_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4D8E2D635D41B68F036650B385031EAF /* Headers */ = {
+		612C98C439A043CF3AFC7CD40D6FE169 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F15851043E4446EC302DA34C6F55047 /* Pods-SoundWave_Example-umbrella.h in Headers */,
+				FBFDD2E1C87406ABF0B968853EB5A448 /* Pods-SoundWave_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FC52BFA98D182C1A54E06DA30F1336FA /* Headers */ = {
+		BC1CDD9C62E901562B22AA4B13E22031 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A35353E06BB872ACBF26C8680B0BA4E /* SoundWave-umbrella.h in Headers */,
+				10CFD2BAD408245F95767D475E8CE956 /* SoundWave-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		62293B717030EEE54015CB90715971BA /* Pods-SoundWave_Example */ = {
+		3A24C5DF055FEC0560CE713C63676D39 /* Pods-SoundWave_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 69C74C2481CFE3688D8595933264F51D /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Example" */;
+			buildConfigurationList = C49F58A0D7292D05475FC2EF1F976A02 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Tests" */;
 			buildPhases = (
-				D515711270A3DC6528EFD80F4151399C /* Sources */,
-				74E5C2CBC541BE6797F6A29DB26D7CDB /* Frameworks */,
-				4D8E2D635D41B68F036650B385031EAF /* Headers */,
+				612C98C439A043CF3AFC7CD40D6FE169 /* Headers */,
+				2C008082B3726AE62C36DBDD9C499F47 /* Sources */,
+				37DB80BB7C5B09898FBB8309D4E30D35 /* Frameworks */,
+				9B49313435170139F324378F937DC869 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A7FD77841CF82BFC9E763F9DC768EE20 /* PBXTargetDependency */,
+				DAB642CFC15F16927BC552F5A45C8A3B /* PBXTargetDependency */,
+			);
+			name = "Pods-SoundWave_Tests";
+			productName = "Pods-SoundWave_Tests";
+			productReference = 9C29C2047651EDA9A7A917198244637B /* Pods_SoundWave_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5562A7AD50BFF09D4F9C2F077AC6585C /* Pods-SoundWave_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB61A3D709C03FEA6AFD10E570356550 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Example" */;
+			buildPhases = (
+				5128652E7292E404F9BC2E6D5BB81C17 /* Headers */,
+				8E7CF8632000617530BC4F291621859B /* Sources */,
+				0F0DC5F871985C2530D2C20195752380 /* Frameworks */,
+				8F90F921AEEBBB3145924FF43EB9273E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AA329F1EE9C64FD5C6FF5C3116C4F6B3 /* PBXTargetDependency */,
 			);
 			name = "Pods-SoundWave_Example";
 			productName = "Pods-SoundWave_Example";
-			productReference = 49F603A4270F67670BB66696486F5B02 /* Pods_SoundWave_Example.framework */;
+			productReference = 5DAE4FDD3581C35D738D99B8BD194A0F /* Pods_SoundWave_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DA0E0DA783D455D06CF45FA469F380CD /* SoundWave */ = {
+		B02988A03122B7116D9EB7EB3C26C39A /* SoundWave */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 92508F098C64231D3AAE2E6B223CE8A2 /* Build configuration list for PBXNativeTarget "SoundWave" */;
+			buildConfigurationList = 7E79B8975E4EF014A902615E9AB88EF0 /* Build configuration list for PBXNativeTarget "SoundWave" */;
 			buildPhases = (
-				E6F5EC7BAF7F54412C7E3FE235B5B66D /* Sources */,
-				A5436CF00162CA1127B234A7F8306161 /* Frameworks */,
-				FC52BFA98D182C1A54E06DA30F1336FA /* Headers */,
+				BC1CDD9C62E901562B22AA4B13E22031 /* Headers */,
+				49CFFED001B42E67EA0426A6B59D2793 /* Sources */,
+				DB697951E25533A8731D78682D7E5C2A /* Frameworks */,
+				1735991E8764972217D8F3F42A7FDC50 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -293,234 +310,237 @@
 			);
 			name = SoundWave;
 			productName = SoundWave;
-			productReference = 252C9420CC36096860FB7495F8C19010 /* SoundWave.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		E7471DC3D801D7D62EAEE8B6628A0E2D /* Pods-SoundWave_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F8E484A0483BE6436FDC6580C7C543B3 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Tests" */;
-			buildPhases = (
-				125D9DD15E21AB1A259D2C025DDD6D44 /* Sources */,
-				6E6EA9749E92FD4C480BBC4E90146705 /* Frameworks */,
-				382424384A70397DE68F81B91338AD92 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Pods-SoundWave_Tests";
-			productName = "Pods-SoundWave_Tests";
-			productReference = 9B458B1503E7F72122EF888A8A7B12FE /* Pods_SoundWave_Tests.framework */;
+			productReference = C8F723CB3C488055BEED95A6B9ED5666 /* SoundWave.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0920;
-				TargetAttributes = {
-					DA0E0DA783D455D06CF45FA469F380CD = {
-						LastSwiftMigration = 0920;
-					};
-				};
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 5A2E4EFD11A401E5218694D0BD4ECCE4 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8E63BC80E1910EFE20F854557F583DF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				62293B717030EEE54015CB90715971BA /* Pods-SoundWave_Example */,
-				E7471DC3D801D7D62EAEE8B6628A0E2D /* Pods-SoundWave_Tests */,
-				DA0E0DA783D455D06CF45FA469F380CD /* SoundWave */,
+				5562A7AD50BFF09D4F9C2F077AC6585C /* Pods-SoundWave_Example */,
+				3A24C5DF055FEC0560CE713C63676D39 /* Pods-SoundWave_Tests */,
+				B02988A03122B7116D9EB7EB3C26C39A /* SoundWave */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		1735991E8764972217D8F3F42A7FDC50 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F90F921AEEBBB3145924FF43EB9273E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B49313435170139F324378F937DC869 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		125D9DD15E21AB1A259D2C025DDD6D44 /* Sources */ = {
+		2C008082B3726AE62C36DBDD9C499F47 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BFC4A612E184529CF12FFB1FBE6B567 /* Pods-SoundWave_Tests-dummy.m in Sources */,
+				772D6C4731704EBA40EA944E5CDA5BDD /* Pods-SoundWave_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D515711270A3DC6528EFD80F4151399C /* Sources */ = {
+		49CFFED001B42E67EA0426A6B59D2793 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DF11500B496861E614056AB53148AB1 /* Pods-SoundWave_Example-dummy.m in Sources */,
+				0E4F148F7A5877FF62AF22C7BF90AF82 /* AudioVisualizationView.swift in Sources */,
+				8925C6C1E32B2A7333E5C0CB6F43F995 /* BaseNibView.swift in Sources */,
+				B035AB79A844DC88FE491187B5E4396F /* Chronometer.swift in Sources */,
+				7643532D22E5499A92D4833042FABEAE /* SoundWave-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6F5EC7BAF7F54412C7E3FE235B5B66D /* Sources */ = {
+		8E7CF8632000617530BC4F291621859B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4D5248AC16C27A9CF57898907A831AAA /* AudioVisualizationView.swift in Sources */,
-				1EEC775DDE5F2A37C0E0F86E43C7B31A /* AudioVisualizationView.xib in Sources */,
-				EE42F2D0E643548C479E9E196044AB41 /* BaseNibView.swift in Sources */,
-				BB315AD5647B65A817ACB404A2AA12C2 /* Chronometer.swift in Sources */,
-				455AA26188E2B36BF5843EF8154D018D /* SoundWave-dummy.m in Sources */,
+				330D63421D7BE440B0F25FE57A9053EA /* Pods-SoundWave_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		A7FD77841CF82BFC9E763F9DC768EE20 /* PBXTargetDependency */ = {
+		AA329F1EE9C64FD5C6FF5C3116C4F6B3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SoundWave;
-			target = DA0E0DA783D455D06CF45FA469F380CD /* SoundWave */;
-			targetProxy = 78D675D5D9BC79144F990F92289D239F /* PBXContainerItemProxy */;
+			target = B02988A03122B7116D9EB7EB3C26C39A /* SoundWave */;
+			targetProxy = BC5DA26B1FF3733D24C1629B2FCE7C1C /* PBXContainerItemProxy */;
+		};
+		DAB642CFC15F16927BC552F5A45C8A3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-SoundWave_Example";
+			target = 5562A7AD50BFF09D4F9C2F077AC6585C /* Pods-SoundWave_Example */;
+			targetProxy = 88A3603815A7E530042075E193114E60 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		006806B03C740F60928BA2B7A6519375 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SoundWave/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SoundWave;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		02B93AF266674040D4B500C83036B486 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7C3EBF1A6D0AF3972BB0836B6473982C /* Pods-SoundWave_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SoundWave_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		27A05C1FE6395E1EF53A797648D72ADA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B7DDA863120F9C5ECA05E1F9A768C1C /* SoundWave.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SoundWave/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SoundWave;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */ = {
+		3048B0C5C704DFFF688DA57F5380ED58 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.2;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		509CB33CD820A30AA17DE43258D25872 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171F70B5277D8C9559D7E813CA5F3E3E /* SoundWave.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SoundWave/SoundWave-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
+				PRODUCT_MODULE_NAME = SoundWave;
+				PRODUCT_NAME = SoundWave;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B0C8287D755FD95091CF35D87FB8B2D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -529,118 +549,86 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		67ECDC85C229A7E71F2938B6A6899381 /* Release */ = {
+		7DED6257E6D640C886FB011E883B362A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B168FBFA2420FB581A5566CA9B989828 /* Pods-SoundWave_Tests.release.xcconfig */;
+			baseConfigurationReference = 2A04281E755CDFAA6E457F5DF0F129A3 /* Pods-SoundWave_Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SoundWave_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		6EE74E820EAA093CA98BAC0A365DABC1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E8C5857EA17DF58CB26165413F31A4DA /* Pods-SoundWave_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SoundWave_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		A3FF5D4D8153674C51DFF7181BF74538 /* Debug */ = {
+		80163B4B530AE66E0277F3AE9DF1E1A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 557FB35657EE84C684F44131FA3D464A /* Pods-SoundWave_Tests.debug.xcconfig */;
+			baseConfigurationReference = 123E6352DA5282A14037FB4F678EE382 /* Pods-SoundWave_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_SoundWave_Tests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -649,97 +637,147 @@
 			};
 			name = Debug;
 		};
-		B7324857C38B065FEB1EEE3105C2367A /* Release */ = {
+		A355E390856277D5144A6B94F8E57571 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 171F70B5277D8C9559D7E813CA5F3E3E /* SoundWave.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SYMROOT = "${SRCROOT}/../build";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SoundWave/SoundWave-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SoundWave/SoundWave-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SoundWave/SoundWave.modulemap";
+				PRODUCT_MODULE_NAME = SoundWave;
+				PRODUCT_NAME = SoundWave;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B0CE5B4D36B114524BE8A305BDE898C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95EF8459E1CE6208CB04489249E770D2 /* Pods-SoundWave_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		D3C862B1906E27991079015E4EC38ADC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CF2C42D7579BDBF627D18C890E33D99 /* Pods-SoundWave_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SoundWave_Tests/Pods-SoundWave_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				59B042A655B7C20CBAB90E385BF4E4C7 /* Debug */,
-				B7324857C38B065FEB1EEE3105C2367A /* Release */,
+				5B0C8287D755FD95091CF35D87FB8B2D /* Debug */,
+				3048B0C5C704DFFF688DA57F5380ED58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		69C74C2481CFE3688D8595933264F51D /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Example" */ = {
+		7E79B8975E4EF014A902615E9AB88EF0 /* Build configuration list for PBXNativeTarget "SoundWave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				02B93AF266674040D4B500C83036B486 /* Debug */,
-				6EE74E820EAA093CA98BAC0A365DABC1 /* Release */,
+				A355E390856277D5144A6B94F8E57571 /* Debug */,
+				509CB33CD820A30AA17DE43258D25872 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		92508F098C64231D3AAE2E6B223CE8A2 /* Build configuration list for PBXNativeTarget "SoundWave" */ = {
+		C49F58A0D7292D05475FC2EF1F976A02 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				27A05C1FE6395E1EF53A797648D72ADA /* Debug */,
-				006806B03C740F60928BA2B7A6519375 /* Release */,
+				D3C862B1906E27991079015E4EC38ADC /* Debug */,
+				B0CE5B4D36B114524BE8A305BDE898C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8E484A0483BE6436FDC6580C7C543B3 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Tests" */ = {
+		DB61A3D709C03FEA6AFD10E570356550 /* Build configuration list for PBXNativeTarget "Pods-SoundWave_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3FF5D4D8153674C51DFF7181BF74538 /* Debug */,
-				67ECDC85C229A7E71F2938B6A6899381 /* Release */,
+				80163B4B530AE66E0277F3AE9DF1E1A9 /* Debug */,
+				7DED6257E6D640C886FB011E883B362A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
