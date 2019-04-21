@@ -150,22 +150,6 @@ public class AudioVisualizationView: BaseNibView {
 		return self.meteringLevelsClusteredArray
 	}
 
-    // PRAGMA: - Analyze Sound File
-
-    private func buffer(url: URL) {
-        do {
-            let track = try AVAudioFile(forReading: url)
-            let format = AVAudioFormat(commonFormat:.pcmFormatFloat32,
-                                       sampleRate:track.fileFormat.sampleRate,
-                                       channels: track.fileFormat.channelCount,
-                                       interleaved: false)
-            let buffer = AVAudioPCMBuffer(pcmFormat: format!, frameCapacity: UInt32(track.length))!
-            try track.read(into : buffer, frameCount:UInt32(track.length))
-        } catch {
-            print(error)
-        }
-    }
-
 	// PRAGMA: - Play Mode Handling
 
 	public func play(for duration: TimeInterval) {

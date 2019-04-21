@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E4F148F7A5877FF62AF22C7BF90AF82 /* AudioVisualizationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF3CB4688A5BEDA3EEED64556A7ABCB /* AudioVisualizationView.swift */; };
 		10CFD2BAD408245F95767D475E8CE956 /* SoundWave-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 90971F2E3C6A2BB4EE25F0E1BC8FE3A3 /* SoundWave-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13914E88226D1E870045C99D /* AVAudioFileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13914E86226D1E510045C99D /* AVAudioFileExtensions.swift */; };
 		28B825EA1FCFB42A5F3F3A06AF511349 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		2BD5B735D84BD0983BC75B3E1AD086E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
 		330D63421D7BE440B0F25FE57A9053EA /* Pods-SoundWave_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 683603895C0AEA712647D8024201B158 /* Pods-SoundWave_Example-dummy.m */; };
@@ -42,6 +43,7 @@
 		0431AAC03870CD0FF1B6B597A8672A48 /* Pods-SoundWave_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SoundWave_Example-umbrella.h"; sourceTree = "<group>"; };
 		0958323327EB40E9F6FD0CC29FEED5E4 /* Pods-SoundWave_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SoundWave_Example.modulemap"; sourceTree = "<group>"; };
 		123E6352DA5282A14037FB4F678EE382 /* Pods-SoundWave_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		13914E86226D1E510045C99D /* AVAudioFileExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AVAudioFileExtensions.swift; path = SoundWave/Classes/AVAudioFileExtensions.swift; sourceTree = "<group>"; };
 		171F70B5277D8C9559D7E813CA5F3E3E /* SoundWave.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SoundWave.xcconfig; sourceTree = "<group>"; };
 		23EF6C7F30D8C5B8D6384C4DFDF0BA77 /* SoundWave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SoundWave.modulemap; sourceTree = "<group>"; };
 		2A04281E755CDFAA6E457F5DF0F129A3 /* Pods-SoundWave_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CEF3CB4688A5BEDA3EEED64556A7ABCB /* AudioVisualizationView.swift */,
+				13914E86226D1E510045C99D /* AVAudioFileExtensions.swift */,
 				B858444A069069EB6DFB3C74185B8F2F /* BaseNibView.swift */,
 				2A3DB461EEBACAD078C41C567B5F4938 /* Chronometer.swift */,
 				1FD32F54A00CACD9E8148E41603F1490 /* Pod */,
@@ -387,6 +390,7 @@
 				0E4F148F7A5877FF62AF22C7BF90AF82 /* AudioVisualizationView.swift in Sources */,
 				8925C6C1E32B2A7333E5C0CB6F43F995 /* BaseNibView.swift in Sources */,
 				B035AB79A844DC88FE491187B5E4396F /* Chronometer.swift in Sources */,
+				13914E88226D1E870045C99D /* AVAudioFileExtensions.swift in Sources */,
 				7643532D22E5499A92D4833042FABEAE /* SoundWave-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +584,7 @@
 			baseConfigurationReference = 2A04281E755CDFAA6E457F5DF0F129A3 /* Pods-SoundWave_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -603,6 +608,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -615,6 +621,7 @@
 			baseConfigurationReference = 123E6352DA5282A14037FB4F678EE382 /* Pods-SoundWave_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -638,6 +645,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
