@@ -1,5 +1,5 @@
 PODS:
-  - SoundWave (0.1.0)
+  - SoundWave (0.1.4)
 
 DEPENDENCIES:
   - SoundWave (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SoundWave: c04478507b3e12f7390b63583f11441642f242d9
+  SoundWave: cb543f3b100385b96e3642ac8f2a8185cd0621ea
 
 PODFILE CHECKSUM: dfc7e67748298c50c5f67204a07ae01031d7c398
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.6.0
