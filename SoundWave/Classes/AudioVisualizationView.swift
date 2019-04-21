@@ -200,6 +200,31 @@ public class AudioVisualizationView: BaseNibView {
 		self.currentGradientPercentage = nil
 	}
 
+    // PRAGMA: - Play From File
+
+    public func play(from url: URL) {
+        guard self.audioVisualizationMode == .read else {
+            fatalError("trying to read audio visualization in write mode")
+        }
+
+        let track: AVAudioFile
+        do {
+            track = try AVAudioFile(forReading: url)
+            self.meteringLevels = try track.buffer().first
+        } catch {
+            fatalError("failed to create file from url")
+        }
+
+        guard self.meteringLevels != nil else {
+            fatalError("trying to read audio visualization of non initialized sound record")
+        }
+
+        let audioNodeFileLength = AVAudioFrameCount(track.length)
+        let duration = Double(audioNodeFileLength) / 44100.0 // Divide by the AVSampleRateKey in the recorder settings
+
+        self.play(for: duration)
+    }
+
 	// MARK: - Mask + Gradient
 
 	private func drawLevelBarsMaskAndGradient(inContext context: CGContext) {
