@@ -369,12 +369,12 @@ public class AudioVisualizationView: BaseNibView {
             guard let audioContext = audioContext else {
                 fatalError("Couldn't create the audioContext")
             }
-            self.meteringLevels = self.percentage(self.render(audioContext: audioContext, targetSamples: 300))
+            self.meteringLevels = self.percentage(self.render(audioContext: audioContext, targetSamples: 100))
 
             guard self.meteringLevels != nil else {
                 fatalError("trying to read audio visualization of non initialized sound record")
             }
-            self.play(for: 10)
+            self.play(for: 2)
         })
     }
 

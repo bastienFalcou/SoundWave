@@ -78,7 +78,7 @@ final class ViewController: UIViewController {
         }
 
         // Test Code
-        let path = Bundle.main.path(forResource: "Bell", ofType: "mp3")!
+        let path = Bundle.main.path(forResource: "Bell", ofType: "wav")!
         let url = URL(fileURLWithPath: path)
         self.audioVisualizationView.play(from: url)
     }
