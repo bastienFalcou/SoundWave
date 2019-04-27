@@ -151,12 +151,12 @@ public class AudioVisualizationView: BaseNibView {
 		return self.meteringLevelsClusteredArray
 	}
 
-    func render(audioContext: AudioContext?, targetSamples: Int = 100) -> [Float]{
+    func render(audioContext: AudioContext?, targetSamples: Int = 100) -> [Float] {
         guard let audioContext = audioContext else {
             fatalError("Couldn't create the audioContext")
         }
 
-        let sampleRange: CountableRange<Int> = 0..<audioContext.totalSamples/3
+        let sampleRange: CountableRange<Int> = 0..<audioContext.totalSamples / 3
 
         guard let reader = try? AVAssetReader(asset: audioContext.asset)
             else {
@@ -226,7 +226,7 @@ public class AudioVisualizationView: BaseNibView {
                            downSampledLength: downSampledLength,
                            samplesPerPixel: samplesPerPixel,
                            filter: filter)
-            //print("Status: \(reader.status)")
+            print("Status: \(reader.status)")
         }
 
         // Process the remaining samples at the end which didn't fit into samplesPerPixel
@@ -242,7 +242,7 @@ public class AudioVisualizationView: BaseNibView {
                            downSampledLength: downSampledLength,
                            samplesPerPixel: samplesPerPixel,
                            filter: filter)
-            //print("Status: \(reader.status)")
+            print("Status: \(reader.status)")
         }
 
         // if (reader.status == AVAssetReaderStatusFailed || reader.status == AVAssetReaderStatusUnknown)
@@ -295,7 +295,7 @@ public class AudioVisualizationView: BaseNibView {
 
         //Clip to [noiseFloor, 0]
         var ceil: Float = 0.0
-        var noiseFloorMutable: Float = -80.0 // TODO: CHANGE THIS VALUE
+        var noiseFloorMutable: Float = 0.0 // TODO: CHANGE THIS VALUE
         vDSP_vclip(normalizedSamples, 1, &noiseFloorMutable, &ceil, &normalizedSamples, 1, vDSP_Length(normalizedSamples.count))
     }
 
@@ -356,22 +356,17 @@ public class AudioVisualizationView: BaseNibView {
             fatalError("trying to read audio visualization in write mode")
         }
 
-        var outputArray : [Float] = []
         AudioContext.load(fromAudioURL: url, completionHandler: { audioContext in
             guard let audioContext = audioContext else {
                 fatalError("Couldn't create the audioContext")
             }
-            outputArray = self.render(audioContext: audioContext, targetSamples: 300)
+            self.meteringLevels = self.render(audioContext: audioContext, targetSamples: 300)
+
+            guard self.meteringLevels != nil else {
+                fatalError("trying to read audio visualization of non initialized sound record")
+            }
+            self.play(for: 10)
         })
-
-        self.meteringLevels = outputArray
-
-        print(self.meteringLevels)
-        guard self.meteringLevels != nil else {
-            fatalError("trying to read audio visualization of non initialized sound record")
-        }
-
-        self.play(for: 10)
     }
 
 	// MARK: - Mask + Gradient
