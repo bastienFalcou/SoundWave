@@ -226,7 +226,6 @@ public class AudioVisualizationView: BaseNibView {
                            downSampledLength: downSampledLength,
                            samplesPerPixel: samplesPerPixel,
                            filter: filter)
-            print("Status: \(reader.status)")
         }
 
         // Process the remaining samples at the end which didn't fit into samplesPerPixel
@@ -242,7 +241,6 @@ public class AudioVisualizationView: BaseNibView {
                            downSampledLength: downSampledLength,
                            samplesPerPixel: samplesPerPixel,
                            filter: filter)
-            print("Status: \(reader.status)")
         }
 
         // if (reader.status == AVAssetReaderStatusFailed || reader.status == AVAssetReaderStatusUnknown)
@@ -295,7 +293,7 @@ public class AudioVisualizationView: BaseNibView {
 
         //Clip to [noiseFloor, 0]
         var ceil: Float = 0.0
-        var noiseFloorMutable: Float = 0.0 // TODO: CHANGE THIS VALUE
+        var noiseFloorMutable: Float = -80.0 // TODO: CHANGE THIS VALUE
         vDSP_vclip(normalizedSamples, 1, &noiseFloorMutable, &ceil, &normalizedSamples, 1, vDSP_Length(normalizedSamples.count))
     }
 
