@@ -3,6 +3,7 @@
 //  Pods-SoundWave_Example
 //
 //  Created by Bastien Falcou on 4/21/19.
+//  Inspired from https://stackoverflow.com/a/52280271
 //
 
 import AVFoundation
@@ -34,18 +35,10 @@ extension AVAudioFile {
 	}
 }
 
-/// Holds audio information used for building waveforms
 final class AudioContext {
-	/// The audio asset URL used to load the context
 	public let audioURL: URL
-
-	/// Total number of samples in loaded asset
 	public let totalSamples: Int
-
-	/// Loaded asset
 	public let asset: AVAsset
-
-	// Loaded assetTrack
 	public let assetTrack: AVAssetTrack
 
 	private init(audioURL: URL, totalSamples: Int, asset: AVAsset, assetTrack: AVAssetTrack) {
@@ -67,22 +60,19 @@ final class AudioContext {
 			let status = asset.statusOfValue(forKey: "duration", error: &error)
 			switch status {
 			case .loaded:
-				guard
-					let formatDescriptions = assetTrack.formatDescriptions as? [CMAudioFormatDescription],
+				guard let formatDescriptions = assetTrack.formatDescriptions as? [CMAudioFormatDescription],
 					let audioFormatDesc = formatDescriptions.first,
-					let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(audioFormatDesc)
-					else { break }
-
+					let asbd = CMAudioFormatDescriptionGetStreamBasicDescription(audioFormatDesc) else
+				{
+					break
+				}
 				let totalSamples = Int((asbd.pointee.mSampleRate) * Float64(asset.duration.value) / Float64(asset.duration.timescale))
 				let audioContext = AudioContext(audioURL: audioURL, totalSamples: totalSamples, asset: asset, assetTrack: assetTrack)
 				completionHandler(audioContext)
-				return
-
 			case .failed, .cancelled, .loading, .unknown:
 				print("Couldn't load asset: \(error?.localizedDescription ?? "Unknown error")")
+				completionHandler(nil)
 			}
-
-			completionHandler(nil)
 		}
 	}
 }
