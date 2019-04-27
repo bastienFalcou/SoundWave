@@ -286,6 +286,17 @@ public class AudioVisualizationView: BaseNibView {
         }
     }
 
+    func percentage(_ array: [Float]) -> [Float] {
+        guard let firstElement = array.first else {
+            return []
+        }
+        let absArray = array.map { abs($0) }
+        let minValue = absArray.reduce(firstElement) { min($0, $1) }
+        let maxValue = absArray.reduce(firstElement) { max($0, $1) }
+        let delta = maxValue - minValue
+        return absArray.map { abs(1 - (delta / ($0 - minValue))) }
+    }
+
     func getdB(from normalizedSamples: inout [Float]) {
         // Convert samples to a log scale
         var zero: Float = 32768.0
@@ -358,7 +369,7 @@ public class AudioVisualizationView: BaseNibView {
             guard let audioContext = audioContext else {
                 fatalError("Couldn't create the audioContext")
             }
-            self.meteringLevels = self.render(audioContext: audioContext, targetSamples: 300)
+            self.meteringLevels = self.percentage(self.render(audioContext: audioContext, targetSamples: 300))
 
             guard self.meteringLevels != nil else {
                 fatalError("trying to read audio visualization of non initialized sound record")
