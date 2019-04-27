@@ -76,11 +76,6 @@ final class ViewController: UIViewController {
             self?.currentState = .recorded
             self?.audioVisualizationView.stop()
         }
-
-        // Test Code
-        let path = Bundle.main.path(forResource: "Bell", ofType: "wav")!
-        let url = URL(fileURLWithPath: path)
-        self.audioVisualizationView.play(from: url)
     }
 
     // MARK: - Actions
