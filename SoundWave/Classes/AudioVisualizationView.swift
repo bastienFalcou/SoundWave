@@ -151,6 +151,8 @@ public class AudioVisualizationView: BaseNibView {
 		return self.meteringLevelsClusteredArray
 	}
 
+    // TODO: Refactor starting from here
+
     func render(audioContext: AudioContext?, targetSamples: Int = 100) -> [Float] {
         guard let audioContext = audioContext else {
             fatalError("Couldn't create the audioContext")
@@ -158,13 +160,14 @@ public class AudioVisualizationView: BaseNibView {
 
         let sampleRange: CountableRange<Int> = 0..<audioContext.totalSamples / 3
 
-        guard let reader = try? AVAssetReader(asset: audioContext.asset)
-            else {
-                fatalError("Couldn't initialize the AVAssetReader")
+        guard let reader = try? AVAssetReader(asset: audioContext.asset) else {
+            fatalError("Couldn't initialize the AVAssetReader")
         }
 
-        reader.timeRange = CMTimeRange(start: CMTime(value: Int64(sampleRange.lowerBound), timescale: audioContext.asset.duration.timescale),
-                                       duration: CMTime(value: Int64(sampleRange.count), timescale: audioContext.asset.duration.timescale))
+        reader.timeRange = CMTimeRange(
+            start: CMTime(value: Int64(sampleRange.lowerBound), timescale: audioContext.asset.duration.timescale),
+            duration: CMTime(value: Int64(sampleRange.count), timescale: audioContext.asset.duration.timescale)
+        )
 
         let outputSettingsDict: [String : Any] = [
             AVFormatIDKey: Int(kAudioFormatLinearPCM),
@@ -174,8 +177,7 @@ public class AudioVisualizationView: BaseNibView {
             AVLinearPCMIsNonInterleaved: false
         ]
 
-        let readerOutput = AVAssetReaderTrackOutput(track: audioContext.assetTrack,
-                                                    outputSettings: outputSettingsDict)
+        let readerOutput = AVAssetReaderTrackOutput(track: audioContext.assetTrack, outputSettings: outputSettingsDict)
         readerOutput.alwaysCopiesSampleData = false
         reader.add(readerOutput)
 
