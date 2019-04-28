@@ -152,6 +152,20 @@ public class AudioVisualizationView: BaseNibView {
 
 	// PRAGMA: - Play Mode Handling
 
+	public func play(from url: URL) {
+		guard self.audioVisualizationMode == .read else {
+			fatalError("trying to read audio visualization in write mode")
+		}
+
+		AudioContext.load(fromAudioURL: url) { audioContext in
+			guard let audioContext = audioContext else {
+				fatalError("Couldn't create the audioContext")
+			}
+			self.meteringLevels = audioContext.render(targetSamples: 100)
+			self.play(for: 2)
+		}
+	}
+	
 	public func play(for duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
@@ -199,22 +213,6 @@ public class AudioVisualizationView: BaseNibView {
 		self.setNeedsDisplay()
 		self.currentGradientPercentage = nil
 	}
-
-    // PRAGMA: - Play From File
-
-    public func play(from url: URL) {
-        guard self.audioVisualizationMode == .read else {
-            fatalError("trying to read audio visualization in write mode")
-        }
-
-        AudioContext.load(fromAudioURL: url, completionHandler: { audioContext in
-            guard let audioContext = audioContext else {
-                fatalError("Couldn't create the audioContext")
-            }
-            self.meteringLevels = audioContext.render(targetSamples: 100)
-            self.play(for: 2)
-        })
-    }
 
 	// MARK: - Mask + Gradient
 
