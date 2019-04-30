@@ -79,15 +79,13 @@ public class BaseNibView: UIView {
 		if self.shouldAwakeFromNib {
 			self.awakeFromNib()
 		}
-		
+
 		self.contentView.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.contentView)
-		
-		let leadingConstraint = NSLayoutConstraint(item: self.contentView, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 0.0)
-		let topConstraint = NSLayoutConstraint(item: self.contentView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 0.0)
-		let trailingConstraint = NSLayoutConstraint(item: self.contentView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0.0)
-		let bottomConstraint = NSLayoutConstraint(item: self.contentView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0.0)
 
-		self.addConstraints([leadingConstraint, topConstraint, trailingConstraint, bottomConstraint])
+		self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+		self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+		self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+		self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
 	}
 }
