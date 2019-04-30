@@ -79,13 +79,13 @@ public class BaseNibView: UIView {
 		if self.shouldAwakeFromNib {
 			self.awakeFromNib()
 		}
-		
+
 		self.contentView.translatesAutoresizingMaskIntoConstraints = false
 		self.addSubview(self.contentView)
 
-        self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-        self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+		self.contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+		self.contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+		self.contentView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+		self.contentView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
 	}
 }
