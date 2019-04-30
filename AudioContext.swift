@@ -9,7 +9,7 @@
 import Accelerate
 import AVFoundation
 
-final class AudioContext {
+public final class AudioContext {
 	public let audioURL: URL
 	public let totalSamples: Int
 	public let asset: AVAsset
