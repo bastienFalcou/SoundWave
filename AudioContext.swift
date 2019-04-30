@@ -46,6 +46,9 @@ final class AudioContext {
 			case .failed, .cancelled, .loading, .unknown:
 				print("Couldn't load asset: \(error?.localizedDescription ?? "Unknown error")")
 				completionHandler(nil)
+			@unknown default:
+				print("Couldn't load asset, unknown default: \(error?.localizedDescription ?? "Unknown error")")
+				completionHandler(nil)
 			}
 		}
 	}
