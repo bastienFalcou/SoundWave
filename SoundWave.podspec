@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SoundWave'
-  s.version          = '0.1.4'
-  s.swift_version    = '4.2'
+  s.version          = '0.1.5'
+  s.swift_version    = '5'
   s.summary          = 'Illustrate your SoundWave on the fly 🚀'
   s.homepage         = 'https://github.com/bastienFalcou/SoundWave'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
                        DESC
 
   s.ios.deployment_target = '10.0'
-  s.source_files = 'SoundWave/Classes/**/*.swift'
+  s.source_files = 'SoundWave/*.swift', 'SoundWave/Classes/**/*.swift'
   
   # s.resource_bundles = {
   #   'SoundWave' => ['SoundWave/Assets/*.png']
