@@ -154,33 +154,36 @@ public final class AudioContext {
 						downSampledLength: Int,
 						samplesPerPixel: Int,
 						filter: [Float]) {
-		sampleBuffer.withUnsafeBytes { (samples: UnsafePointer<Int16>) in
-			var processingBuffer = [Float](repeating: 0.0, count: samplesToProcess)
+        sampleBuffer.withUnsafeBytes { (body: UnsafeRawBufferPointer) in
+            var processingBuffer = [Float](repeating: 0.0, count: samplesToProcess)
+            let sampleCount = vDSP_Length(samplesToProcess)
 
-			let sampleCount = vDSP_Length(samplesToProcess)
+            guard let samples = body.bindMemory(to: Int16.self).baseAddress else {
+                return
+            }
 
-			// Convert 16bit int samples to floats
-			vDSP_vflt16(samples, 1, &processingBuffer, 1, sampleCount)
+            // Convert 16bit int samples to floats
+            vDSP_vflt16(samples, 1, &processingBuffer, 1, sampleCount)
 
-			// Take the absolute values to get amplitude
-			vDSP_vabs(processingBuffer, 1, &processingBuffer, 1, sampleCount)
+            // Take the absolute values to get amplitude
+            vDSP_vabs(processingBuffer, 1, &processingBuffer, 1, sampleCount)
 
-			// Get the corresponding dB, and clip the results
-			getdB(from: &processingBuffer)
+            // Get the corresponding dB, and clip the results
+            getdB(from: &processingBuffer)
 
-			// Downsample and average
-			var downSampledData = [Float](repeating: 0.0, count: downSampledLength)
-			vDSP_desamp(processingBuffer,
-						vDSP_Stride(samplesPerPixel),
-						filter, &downSampledData,
-						vDSP_Length(downSampledLength),
-						vDSP_Length(samplesPerPixel))
+            // Downsample and average
+            var downSampledData = [Float](repeating: 0.0, count: downSampledLength)
+            vDSP_desamp(processingBuffer,
+                        vDSP_Stride(samplesPerPixel),
+                        filter, &downSampledData,
+                        vDSP_Length(downSampledLength),
+                        vDSP_Length(samplesPerPixel))
 
-			// Remove processed samples
-			sampleBuffer.removeFirst(samplesToProcess * MemoryLayout<Int16>.size)
+            // Remove processed samples
+            sampleBuffer.removeFirst(samplesToProcess * MemoryLayout<Int16>.size)
 
-			outputSamples += downSampledData
-		}
+            outputSamples += downSampledData
+        }
 	}
 
 	private func getdB(from normalizedSamples: inout [Float]) {
