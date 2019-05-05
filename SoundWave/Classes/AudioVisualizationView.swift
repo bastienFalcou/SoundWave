@@ -5,6 +5,7 @@
 //  Created by Bastien Falcou on 12/6/16.
 //
 
+import AVFoundation
 import UIKit
 
 public class AudioVisualizationView: BaseNibView {
@@ -151,6 +152,20 @@ public class AudioVisualizationView: BaseNibView {
 
 	// PRAGMA: - Play Mode Handling
 
+	public func play(from url: URL) {
+		guard self.audioVisualizationMode == .read else {
+			fatalError("trying to read audio visualization in write mode")
+		}
+
+		AudioContext.load(fromAudioURL: url) { audioContext in
+			guard let audioContext = audioContext else {
+				fatalError("Couldn't create the audioContext")
+			}
+			self.meteringLevels = audioContext.render(targetSamples: 100)
+			self.play(for: 2)
+		}
+	}
+	
 	public func play(for duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")

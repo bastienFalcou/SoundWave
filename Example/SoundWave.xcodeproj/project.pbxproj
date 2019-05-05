@@ -12,6 +12,7 @@
 		0C36F9731DF702B1001A0F23 /* AudioRecorderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F9711DF702B1001A0F23 /* AudioRecorderManager.swift */; };
 		0C36F9751DF7045D001A0F23 /* AudioErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C36F9741DF7045D001A0F23 /* AudioErrorType.swift */; };
 		0CF7A0441DF7387300A46D4C /* SoundWave+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7A0431DF7387300A46D4C /* SoundWave+Helpers.swift */; };
+		13914E8A226D27DB0045C99D /* Bell.wav in Resources */ = {isa = PBXBuildFile; fileRef = 13914E89226D27DA0045C99D /* Bell.wav */; };
 		40144728817BA31B396A9E61 /* Pods_SoundWave_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70C5A476D8539422A7DD5391 /* Pods_SoundWave_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		0C36F9711DF702B1001A0F23 /* AudioRecorderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioRecorderManager.swift; sourceTree = "<group>"; };
 		0C36F9741DF7045D001A0F23 /* AudioErrorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioErrorType.swift; sourceTree = "<group>"; };
 		0CF7A0431DF7387300A46D4C /* SoundWave+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SoundWave+Helpers.swift"; sourceTree = "<group>"; };
+		13914E89226D27DA0045C99D /* Bell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Bell.wav; sourceTree = "<group>"; };
 		3AFD797C4A2888A01D51DD7D /* Pods-SoundWave_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoundWave_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SoundWave_Example/Pods-SoundWave_Example.release.xcconfig"; sourceTree = "<group>"; };
 		4A7954A0D9F1F67919EBA6E3 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* SoundWave_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoundWave_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,6 +139,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				13914E89226D27DA0045C99D /* Bell.wav */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -270,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				13914E8A226D27DB0045C99D /* Bell.wav in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
