@@ -73,6 +73,11 @@ self.audioVisualizationView.meteringLevelBarInterItem = 1.0
 self.audioVisualizationView.meteringLevelBarCornerRadius = 0.0
 ```
 
+You can change style of level bar to single:
+```swift
+self.audioVisualizationView.meteringLevelBarSingleStick = true
+```
+
 You can change grandient start and end color:
 
 ```swift
