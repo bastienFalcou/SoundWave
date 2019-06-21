@@ -13,6 +13,12 @@ public class AudioVisualizationView: BaseNibView {
 		case read
 		case write
 	}
+    
+    private enum LevelBarType {
+        case upper
+        case lower
+        case single
+    }
 
 	@IBInspectable public var meteringLevelBarWidth: CGFloat = 3.0 {
 		didSet {
@@ -29,6 +35,11 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
+    @IBInspectable public var meteringLevelBarSingleStick: Bool = false {
+        didSet {
+            self.setNeedsDisplay()
+        }
+    }
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
 	
@@ -294,27 +305,37 @@ public class AudioVisualizationView: BaseNibView {
 		let offset = max(self.currentMeteringLevelsArray.count - self.maximumNumberBars, 0)
 
 		for index in offset..<self.currentMeteringLevelsArray.count {
-			self.drawBar(index - offset, meteringLevelIndex: index, isUpperBar: true, context: context)
-			self.drawBar(index - offset, meteringLevelIndex: index, isUpperBar: false, context: context)
+            if self.meteringLevelBarSingleStick {
+                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .single, context: context)
+            } else {
+                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .upper, context: context)
+                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .lower, context: context)
+            }
 		}
 	}
 
-	private func drawBar(_ barIndex: Int, meteringLevelIndex: Int, isUpperBar: Bool, context: CGContext) {
+	private func drawBar(_ barIndex: Int, meteringLevelIndex: Int, levelBarType: LevelBarType, context: CGContext) {
 		context.saveGState()
 
-		var barPath: UIBezierPath!
+        var barRect: CGRect
 
 		let xPointForMeteringLevel = self.xPointForMeteringLevel(barIndex)
 		let heightForMeteringLevel = self.heightForMeteringLevel(self.currentMeteringLevelsArray[meteringLevelIndex])
 
-		if isUpperBar {
-			barPath = UIBezierPath(roundedRect: CGRect(x: xPointForMeteringLevel, y: self.centerY - heightForMeteringLevel,
-				width: self.meteringLevelBarWidth, height: heightForMeteringLevel), cornerRadius: self.meteringLevelBarCornerRadius)
-		} else {
-			barPath = UIBezierPath(roundedRect: CGRect(x: xPointForMeteringLevel, y: self.centerY, width: self.meteringLevelBarWidth,
-				height: heightForMeteringLevel), cornerRadius: self.meteringLevelBarCornerRadius)
-		}
-
+        switch levelBarType {
+        case .upper:
+            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY - heightForMeteringLevel,
+                             width: self.meteringLevelBarWidth, height: heightForMeteringLevel)
+        case .lower:
+            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY, width: self.meteringLevelBarWidth,
+                             height: heightForMeteringLevel)
+        case .single:
+            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY - heightForMeteringLevel,
+                             width: self.meteringLevelBarWidth, height: heightForMeteringLevel * 2)
+        }
+        
+        let barPath: UIBezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: self.meteringLevelBarCornerRadius)
+        
 		UIColor.black.set()
 		barPath.fill()
 
