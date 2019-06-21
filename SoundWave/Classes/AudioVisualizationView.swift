@@ -13,12 +13,12 @@ public class AudioVisualizationView: BaseNibView {
 		case read
 		case write
 	}
-    
-    private enum LevelBarType {
-        case upper
-        case lower
-        case single
-    }
+
+	private enum LevelBarType {
+		case upper
+		case lower
+		case single
+	}
 
 	@IBInspectable public var meteringLevelBarWidth: CGFloat = 3.0 {
 		didSet {
@@ -35,14 +35,14 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
-    @IBInspectable public var meteringLevelBarSingleStick: Bool = false {
-        didSet {
-            self.setNeedsDisplay()
-        }
-    }
+	@IBInspectable public var meteringLevelBarSingleStick: Bool = false {
+		didSet {
+			self.setNeedsDisplay()
+		}
+	}
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
-	
+
 	public var audioVisualizationTimeInterval: TimeInterval = 0.05 // Time interval between each metering bar representation
 
 	// Specify a `gradientPercentage` to have the width of gradient be that percentage of the view width (starting from left)
@@ -50,7 +50,7 @@ public class AudioVisualizationView: BaseNibView {
 	// Do not specify any `gradientPercentage` for gradient calculating fitting size automatically.
 	public var currentGradientPercentage: Float?
 
-	private var meteringLevelsArray: [Float] = []	// Mutating recording array (values are percentage: 0.0 to 1.0)
+	private var meteringLevelsArray: [Float] = []    // Mutating recording array (values are percentage: 0.0 to 1.0)
 	private var meteringLevelsClusteredArray: [Float] = [] // Generated read mode array (values are percentage: 0.0 to 1.0)
 
 	private var currentMeteringLevelsArray: [Float] {
@@ -78,7 +78,7 @@ public class AudioVisualizationView: BaseNibView {
 	static var audioVisualizationDefaultGradientEndColor: UIColor {
 		return UIColor(red: 166.0 / 255.0, green: 150.0 / 255.0, blue: 225.0 / 255.0, alpha: 1.0)
 	}
-	
+
 	@IBInspectable public var gradientStartColor: UIColor = AudioVisualizationView.audioVisualizationDefaultGradientStartColor {
 		didSet {
 			self.setNeedsDisplay()
@@ -90,13 +90,13 @@ public class AudioVisualizationView: BaseNibView {
 		}
 	}
 
-    override public init(frame: CGRect) {
-        super.init(frame: frame)
-    }
+	override public init(frame: CGRect) {
+		super.init(frame: frame)
+	}
 
-    required public init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
+	required public init?(coder aDecoder: NSCoder) {
+		super.init(coder: aDecoder)
+	}
 
 	override public func draw(_ rect: CGRect) {
 		super.draw(rect)
@@ -176,7 +176,7 @@ public class AudioVisualizationView: BaseNibView {
 			self.play(for: 2)
 		}
 	}
-	
+
 	public func play(for duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
@@ -198,12 +198,12 @@ public class AudioVisualizationView: BaseNibView {
 			guard let this = self else {
 				return
 			}
-			
+
 			if timerDuration >= duration {
 				this.stop()
 				return
 			}
-			
+
 			this.currentGradientPercentage = Float(timerDuration) / Float(duration)
 			this.setNeedsDisplay()
 		}
@@ -305,37 +305,43 @@ public class AudioVisualizationView: BaseNibView {
 		let offset = max(self.currentMeteringLevelsArray.count - self.maximumNumberBars, 0)
 
 		for index in offset..<self.currentMeteringLevelsArray.count {
-            if self.meteringLevelBarSingleStick {
-                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .single, context: context)
-            } else {
-                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .upper, context: context)
-                self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .lower, context: context)
-            }
+			if self.meteringLevelBarSingleStick {
+				self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .single, context: context)
+			} else {
+				self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .upper, context: context)
+				self.drawBar(index - offset, meteringLevelIndex: index, levelBarType: .lower, context: context)
+			}
 		}
 	}
 
 	private func drawBar(_ barIndex: Int, meteringLevelIndex: Int, levelBarType: LevelBarType, context: CGContext) {
 		context.saveGState()
 
-        var barRect: CGRect
+		var barRect: CGRect
 
 		let xPointForMeteringLevel = self.xPointForMeteringLevel(barIndex)
 		let heightForMeteringLevel = self.heightForMeteringLevel(self.currentMeteringLevelsArray[meteringLevelIndex])
 
-        switch levelBarType {
-        case .upper:
-            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY - heightForMeteringLevel,
-                             width: self.meteringLevelBarWidth, height: heightForMeteringLevel)
-        case .lower:
-            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY, width: self.meteringLevelBarWidth,
-                             height: heightForMeteringLevel)
-        case .single:
-            barRect = CGRect(x: xPointForMeteringLevel, y: self.centerY - heightForMeteringLevel,
-                             width: self.meteringLevelBarWidth, height: heightForMeteringLevel * 2)
-        }
-        
-        let barPath: UIBezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: self.meteringLevelBarCornerRadius)
-        
+		switch levelBarType {
+		case .upper:
+			barRect = CGRect(x: xPointForMeteringLevel,
+							 y: self.centerY - heightForMeteringLevel,
+							 width: self.meteringLevelBarWidth,
+							 height: heightForMeteringLevel)
+		case .lower:
+			barRect = CGRect(x: xPointForMeteringLevel,
+							 y: self.centerY,
+							 width: self.meteringLevelBarWidth,
+							 height: heightForMeteringLevel)
+		case .single:
+			barRect = CGRect(x: xPointForMeteringLevel,
+							 y: self.centerY - heightForMeteringLevel,
+							 width: self.meteringLevelBarWidth,
+							 height: heightForMeteringLevel * 2)
+		}
+
+		let barPath: UIBezierPath = UIBezierPath(roundedRect: barRect, cornerRadius: self.meteringLevelBarCornerRadius)
+
 		UIColor.black.set()
 		barPath.fill()
 
