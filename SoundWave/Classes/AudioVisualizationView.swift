@@ -40,7 +40,7 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
-	@IBInspectable public var meteringLevelBarSingleStick: Bool = false {
+	@IBInspectable public var meteringLevelBarSlideIn: Bool = false {
         	didSet {
             		self.setNeedsDisplay()
         	}
