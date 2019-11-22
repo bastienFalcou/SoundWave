@@ -40,6 +40,11 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
+	@IBInspectable public var meteringLevelBarSingleStick: Bool = false {
+        	didSet {
+            		self.setNeedsDisplay()
+        	}
+    	}
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
 
@@ -371,6 +376,15 @@ public class AudioVisualizationView: BaseNibView {
 	}
 
 	private func xPointForMeteringLevel(_ atIndex: Int) -> CGFloat {
+		
+		if meteringLevelBarSlideIn {
+            	let barCount = currentMeteringLevelsArray.count
+            		if barCount < maximumNumberBars {
+                		let subIndex = maximumNumberBars + atIndex - barCount
+                		return CGFloat(subIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)
+            		}
+        	}
+		
 		return CGFloat(atIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)
 	}
 }
