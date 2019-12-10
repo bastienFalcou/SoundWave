@@ -332,7 +332,7 @@ public class AudioVisualizationView: BaseNibView {
 			barRect = CGRect(x: xPointForMeteringLevel,
 							 y: self.centerY - heightForMeteringLevel,
 							 width: self.meteringLevelBarWidth,
-							 height: heightForMeteringLevel)
+							 height: heightForMeteringLevel + 1)
 		case .lower:
 			barRect = CGRect(x: xPointForMeteringLevel,
 							 y: self.centerY,
