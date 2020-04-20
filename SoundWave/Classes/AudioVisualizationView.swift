@@ -8,7 +8,7 @@
 import AVFoundation
 import UIKit
 
-public class AudioVisualizationView: BaseNibView {
+public class AudioVisualizationView: UIView {
 	public enum AudioVisualizationMode {
 		case read
 		case write
@@ -62,6 +62,8 @@ public class AudioVisualizationView: BaseNibView {
 
 	private var playChronometer: Chronometer?
 
+    private let traversalView = UIView()
+
 	public var meteringLevels: [Float]? {
 		didSet {
 			if let meteringLevels = self.meteringLevels {
@@ -92,11 +94,27 @@ public class AudioVisualizationView: BaseNibView {
 
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
+
+        setup()
 	}
 
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+
+        setup()
 	}
+
+    private func setup() {
+        traversalView.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(traversalView)
+
+        NSLayoutConstraint.activate([
+            traversalView.heightAnchor.constraint(equalToConstant: 1),
+            traversalView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            traversalView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            traversalView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
 
 	override public func draw(_ rect: CGRect) {
 		super.draw(rect)
