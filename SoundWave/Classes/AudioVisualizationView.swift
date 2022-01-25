@@ -60,7 +60,7 @@ public class AudioVisualizationView: BaseNibView {
 		return meteringLevelsArray
 	}
 
-	private var playChronometer: Chronometer?
+	public var playChronometer: Chronometer?
 
 	public var meteringLevels: [Float]? {
 		didSet {
@@ -118,7 +118,8 @@ public class AudioVisualizationView: BaseNibView {
 
 	public func add(meteringLevel: Float) {
 		guard self.audioVisualizationMode == .write else {
-			fatalError("trying to populate audio visualization view in read mode")
+			print("trying to populate audio visualization view in read mode")
+			return
 		}
 
 		self.meteringLevelsArray.append(meteringLevel)
@@ -165,12 +166,14 @@ public class AudioVisualizationView: BaseNibView {
 
 	public func play(from url: URL) {
 		guard self.audioVisualizationMode == .read else {
-			fatalError("trying to read audio visualization in write mode")
+			print("trying to read audio visualization in write mode")
+			return
 		}
 
 		AudioContext.load(fromAudioURL: url) { audioContext in
 			guard let audioContext = audioContext else {
-				fatalError("Couldn't create the audioContext")
+				print("Couldn't create the audioContext")
+				return
 			}
 			self.meteringLevels = audioContext.render(targetSamples: 100)
 			self.play(for: 2)
@@ -179,11 +182,13 @@ public class AudioVisualizationView: BaseNibView {
 
 	public func play(for duration: TimeInterval) {
 		guard self.audioVisualizationMode == .read else {
-			fatalError("trying to read audio visualization in write mode")
+			print("trying to read audio visualization in write mode")
+			return
 		}
 
 		guard self.meteringLevels != nil else {
-			fatalError("trying to read audio visualization of non initialized sound record")
+			print("trying to read audio visualization of non initialized sound record")
+			return
 		}
 
 		if let currentChronometer = self.playChronometer {
@@ -211,7 +216,8 @@ public class AudioVisualizationView: BaseNibView {
 
 	public func pause() {
 		guard let chronometer = self.playChronometer, chronometer.isPlaying else {
-			fatalError("trying to pause audio visualization view when not playing")
+			print("trying to pause audio visualization view when not playing")
+			return
 		}
 		self.playChronometer?.pause()
 	}
