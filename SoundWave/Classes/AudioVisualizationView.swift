@@ -272,7 +272,7 @@ public class AudioVisualizationView: BaseNibView {
 
 		let colorSpace = CGColorSpaceCreateDeviceRGB()
 		let colorLocations: [CGFloat] = [0.0, 1.0]
-		let colors = [self.gradientStartColor.cgColor, self.gradientEndColor.cgColor]
+		let colors = [self.gradientEndColor.cgColor, self.gradientEndColor.cgColor]
 
 		let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: colorLocations)
 
