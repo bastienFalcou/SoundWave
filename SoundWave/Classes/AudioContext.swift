@@ -26,7 +26,8 @@ public final class AudioContext {
 		let asset = AVURLAsset(url: audioURL, options: [AVURLAssetPreferPreciseDurationAndTimingKey: NSNumber(value: true as Bool)])
 
 		guard let assetTrack = asset.tracks(withMediaType: AVMediaType.audio).first else {
-			fatalError("Couldn't load AVAssetTrack")
+			completionHandler(nil)
+            return
 		}
 
 		asset.loadValuesAsynchronously(forKeys: ["duration"]) {
@@ -54,7 +55,7 @@ public final class AudioContext {
 	}
 
 	public func render(targetSamples: Int = 100) -> [Float] {
-		let sampleRange: CountableRange<Int> = 0..<self.totalSamples / 3
+		let sampleRange: CountableRange<Int> = 0..<self.totalSamples
 
 		guard let reader = try? AVAssetReader(asset: self.asset) else {
 			fatalError("Couldn't initialize the AVAssetReader")

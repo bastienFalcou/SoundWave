@@ -18,6 +18,7 @@
 		772D6C4731704EBA40EA944E5CDA5BDD /* Pods-SoundWave_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD8F10A321336F2AA9DB38B012A48 /* Pods-SoundWave_Tests-dummy.m */; };
 		C34891CD56E99DEBEECA0DA73C7959F4 /* AVAudioFileExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072E85325520F3F286D9D44DE7E1C8A1 /* AVAudioFileExtensions.swift */; };
 		D36F5BBBC7EB8D6BB517FF9AAD7780E2 /* Pods-SoundWave_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0431AAC03870CD0FF1B6B597A8672A48 /* Pods-SoundWave_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EBC8CA6FAFE6D409814927FD97CCCBD8 /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE76442DA4D328F66CCB0E837D3D02 /* BaseNibView.swift */; };
 		F2B82D3B4A2A786087BC576A51AA6B39 /* Chronometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1429E11BAD801116706EFD85179F15FF /* Chronometer.swift */; };
 		FBFDD2E1C87406ABF0B968853EB5A448 /* Pods-SoundWave_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A9F0428B7D92523063021A33240CBD29 /* Pods-SoundWave_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		7DB1CE6876778FBC03DAF31039257D65 /* SoundWave-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SoundWave-dummy.m"; sourceTree = "<group>"; };
 		7F19F73EE23547BD8618FC4CEABC174C /* SoundWave-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SoundWave-umbrella.h"; sourceTree = "<group>"; };
 		8465387E106D78D25AEB3769535D66A0 /* SoundWave.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SoundWave.modulemap; sourceTree = "<group>"; };
+		87CE76442DA4D328F66CCB0E837D3D02 /* BaseNibView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BaseNibView.swift; path = SoundWave/Classes/BaseNibView.swift; sourceTree = "<group>"; };
 		9400672BADC8722EC753AAFF28B265DC /* Pods-SoundWave_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SoundWave_Tests-Info.plist"; sourceTree = "<group>"; };
 		95EF8459E1CE6208CB04489249E770D2 /* Pods-SoundWave_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SoundWave_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9C29C2047651EDA9A7A917198244637B /* Pods_SoundWave_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SoundWave_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +224,7 @@
 				13905A5E227F9BA600F64895 /* AudioContext.swift */,
 				2A4A2F64F79E554811AE887994915C6D /* AudioVisualizationView.swift */,
 				072E85325520F3F286D9D44DE7E1C8A1 /* AVAudioFileExtensions.swift */,
+				87CE76442DA4D328F66CCB0E837D3D02 /* BaseNibView.swift */,
 				1429E11BAD801116706EFD85179F15FF /* Chronometer.swift */,
 				385507137B80C5A218A1717E9C2DA19E /* Pod */,
 				887216040E6D2A08CC415BE3A88303F2 /* Support Files */,
@@ -398,6 +401,7 @@
 				10AAF51A85E9A6D55E199423C94DA9A7 /* AudioVisualizationView.swift in Sources */,
 				C34891CD56E99DEBEECA0DA73C7959F4 /* AVAudioFileExtensions.swift in Sources */,
 				13905A5F227F9BA600F64895 /* AudioContext.swift in Sources */,
+				EBC8CA6FAFE6D409814927FD97CCCBD8 /* BaseNibView.swift in Sources */,
 				F2B82D3B4A2A786087BC576A51AA6B39 /* Chronometer.swift in Sources */,
 				411A8933A3CAAEC03CDA95A7C2C32225 /* SoundWave-dummy.m in Sources */,
 			);

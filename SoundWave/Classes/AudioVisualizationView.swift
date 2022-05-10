@@ -8,7 +8,7 @@
 import AVFoundation
 import UIKit
 
-public class AudioVisualizationView: UIView {
+public class AudioVisualizationView: BaseNibView {
 	public enum AudioVisualizationMode {
 		case read
 		case write
@@ -67,8 +67,6 @@ public class AudioVisualizationView: UIView {
 
 	private var playChronometer: Chronometer?
 
-    private let traversalView = UIView()
-
 	public var meteringLevels: [Float]? {
 		didSet {
 			if let meteringLevels = self.meteringLevels {
@@ -99,27 +97,11 @@ public class AudioVisualizationView: UIView {
 
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
-
-        setup()
 	}
 
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-
-        setup()
 	}
-
-    private func setup() {
-        traversalView.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(traversalView)
-
-        NSLayoutConstraint.activate([
-            traversalView.heightAnchor.constraint(equalToConstant: 1),
-            traversalView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            traversalView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            traversalView.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
-    }
 
 	override public func draw(_ rect: CGRect) {
 		super.draw(rect)
@@ -186,7 +168,7 @@ public class AudioVisualizationView: UIView {
 
 	// PRAGMA: - Play Mode Handling
 
-	public func play(from url: URL) {
+    public func play(from url: URL) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
 		}
@@ -195,8 +177,9 @@ public class AudioVisualizationView: UIView {
 			guard let audioContext = audioContext else {
 				fatalError("Couldn't create the audioContext")
 			}
+            
 			self.meteringLevels = audioContext.render(targetSamples: 100)
-			self.play(for: 2)
+			self.play(for: audioContext.asset.duration.seconds)
 		}
 	}
 
@@ -234,7 +217,7 @@ public class AudioVisualizationView: UIView {
 
 	public func pause() {
 		guard let chronometer = self.playChronometer, chronometer.isPlaying else {
-			return
+			fatalError("trying to pause audio visualization view when not playing")
 		}
 		self.playChronometer?.pause()
 	}
@@ -350,7 +333,7 @@ public class AudioVisualizationView: UIView {
 			barRect = CGRect(x: xPointForMeteringLevel,
 							 y: self.centerY - heightForMeteringLevel,
 							 width: self.meteringLevelBarWidth,
-							 height: heightForMeteringLevel + 1)
+							 height: heightForMeteringLevel)
 		case .lower:
 			barRect = CGRect(x: xPointForMeteringLevel,
 							 y: self.centerY,
@@ -396,7 +379,7 @@ public class AudioVisualizationView: UIView {
 	private func xPointForMeteringLevel(_ atIndex: Int) -> CGFloat {
 		
 		if meteringLevelBarSlideIn {
-            		let barCount = currentMeteringLevelsArray.count
+            	let barCount = currentMeteringLevelsArray.count
             		if barCount < maximumNumberBars {
                 		let subIndex = maximumNumberBars + atIndex - barCount
                 		return CGFloat(subIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)

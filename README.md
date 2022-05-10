@@ -46,12 +46,6 @@ github "bastienFalcou/SoundWave"
 
 Run `$ carthage update` to build the framework and drag the built `SoundWave.framework` into your Xcode project.
 
-### Swift Package Manager
-
-[Swift Package Manager](https://swift.org/package-manager/) is a tool for managing the distribution of Swift code.
-
-In Xcode choose File | Swift Packages | Add package depedency and enter https://github.com/bastienFalcou/SoundWave.
-
 ## Usage
 
 Check out the demo app for an example. It contains the following demos: record sound and display metering levels on the fly, play sound afterwards, resize view, change colors and multiple other properties.
