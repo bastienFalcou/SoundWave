@@ -40,6 +40,11 @@ public class AudioVisualizationView: BaseNibView {
 			self.setNeedsDisplay()
 		}
 	}
+	@IBInspectable public var meteringLevelBarSlideIn: Bool = false {
+        	didSet {
+            		self.setNeedsDisplay()
+        	}
+    	}
 
 	public var audioVisualizationMode: AudioVisualizationMode = .read
 
@@ -163,7 +168,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	// PRAGMA: - Play Mode Handling
 
-	public func play(from url: URL) {
+    public func play(from url: URL) {
 		guard self.audioVisualizationMode == .read else {
 			fatalError("trying to read audio visualization in write mode")
 		}
@@ -172,8 +177,9 @@ public class AudioVisualizationView: BaseNibView {
 			guard let audioContext = audioContext else {
 				fatalError("Couldn't create the audioContext")
 			}
+            
 			self.meteringLevels = audioContext.render(targetSamples: 100)
-			self.play(for: 2)
+			self.play(for: audioContext.asset.duration.seconds)
 		}
 	}
 
@@ -211,7 +217,7 @@ public class AudioVisualizationView: BaseNibView {
 
 	public func pause() {
 		guard let chronometer = self.playChronometer, chronometer.isPlaying else {
-			fatalError("trying to pause audio visualization view when not playing")
+			return
 		}
 		self.playChronometer?.pause()
 	}
@@ -267,7 +273,7 @@ public class AudioVisualizationView: BaseNibView {
 
 		let colorSpace = CGColorSpaceCreateDeviceRGB()
 		let colorLocations: [CGFloat] = [0.0, 1.0]
-		let colors = [self.gradientStartColor.cgColor, self.gradientEndColor.cgColor]
+		let colors = [self.gradientEndColor.cgColor, self.gradientEndColor.cgColor]
 
 		let gradient = CGGradient(colorsSpace: colorSpace, colors: colors as CFArray, locations: colorLocations)
 
@@ -371,6 +377,15 @@ public class AudioVisualizationView: BaseNibView {
 	}
 
 	private func xPointForMeteringLevel(_ atIndex: Int) -> CGFloat {
+		
+		if meteringLevelBarSlideIn {
+            	let barCount = currentMeteringLevelsArray.count
+            		if barCount < maximumNumberBars {
+                		let subIndex = maximumNumberBars + atIndex - barCount
+                		return CGFloat(subIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)
+            		}
+        	}
+		
 		return CGFloat(atIndex) * (self.meteringLevelBarWidth + self.meteringLevelBarInterItem)
 	}
 }
